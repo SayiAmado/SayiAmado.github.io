@@ -7,8 +7,22 @@ onload = () => {
 
 // set up text to print, each item in array is new line
 var aText = new Array(
-  "There are only 10 types of people in the world:", 
-  "Those who understand binary, and those who don't"
+  "Sarai, eres la persona más genial del universo", 
+  "y a pesar de que has pasado por mucho, has dado", 
+  "lo mejor de ti, eres alguien con quien es bonito", 
+  "pasar el tiempo.", 
+  "Has llegado muy lejos, si te caes te levantas, si lloras", 
+  "puedes volver a reir en un momento, no necesitas", 
+  "ser nadie más, siendo tu atraeras a la gente correcta.", 
+  "Creo en ti, que lograras todo eso que tienes pendiente,", 
+  "tienes las capacidades de lograrlo.", 
+  "Te extraño, no dejes de sonreir, es algo que es natural", 
+  "y es bonito, va mucho con tu estilo xd", 
+  "sigue trayendo cosas bonitas a este plano existencial", 
+  "con la creatividad que solo tu posees.", 
+  "Se paciente, muchas cosas toman algo de tiempo", 
+  "....", 
+  "Se feliz, come , rie ,juega, duerme, escucha y disfruta..."
   );
   var iSpeed = 100; // time delay of print out
   var iIndex = 0; // start printing array at this posision
