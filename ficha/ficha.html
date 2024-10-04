@@ -1,1 +1,351 @@
+<!DOCTYPE html>
+<html lang="es">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ficha Técnica - Finn el Humano</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            position: absolute;
+            top: 30%;
+            left: 25%;
+            background-color: rgba(255, 255, 255, 0.678);
+            border-radius: 8px;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #principal {
+            width: 60%;
+        }
+
+        #sidebar {
+            width: 40%;
+        }
+
+        .slideshow {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .mySlides {
+            display: none;
+        }
+
+        .mySlides img {
+            width: 200px;
+            height: 300px;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2em;
+            font-family: HDA
+        }
+
+        @font-face {
+            font-family: HDA;
+            src: url('Adventure Time Logo.ttf');
+        }
+
+        /* From Uiverse.io by barisdogansutcu */
+        button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 50px;
+            position: relative;
+            padding: 0 20px;
+            font-size: 18px;
+            text-transform: uppercase;
+            border: 0;
+            box-shadow: hsl(210deg 87% 36%) 0px 7px 0px 0px;
+            background-color: hsl(210deg 100% 44%);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: 31ms cubic-bezier(.5, .7, .4, 1);
+        }
+
+        button:before {
+            content: attr(alt);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            inset: 0;
+            font-size: 15px;
+            font-weight: bold;
+            color: white;
+            letter-spacing: 4px;
+            opacity: 1;
+        }
+
+        button:active {
+            box-shadow: none;
+            transform: translateY(7px);
+            transition: 35ms cubic-bezier(.5, .7, .4, 1);
+        }
+
+        button:hover:before {
+            transition: all .0s;
+            transform: translateY(100%);
+            opacity: 0;
+        }
+
+        button i {
+            color: white;
+            font-size: 15px;
+            font-weight: bold;
+            letter-spacing: 4px;
+            font-style: normal;
+            transition: all 2s ease;
+            transform: translateY(-20px);
+            opacity: 0;
+        }
+
+        button:hover i {
+            transition: all .2s ease;
+            transform: translateY(0px);
+            opacity: 1;
+        }
+
+        button:hover i:nth-child(1) {
+            transition-delay: 0.045s;
+        }
+
+        button:hover i:nth-child(2) {
+            transition-delay: calc(0.045s * 3);
+        }
+
+        button:hover i:nth-child(3) {
+            transition-delay: calc(0.045s * 4);
+        }
+
+        button:hover i:nth-child(4) {
+            transition-delay: calc(0.045s * 5);
+        }
+
+        button:hover i:nth-child(6) {
+            transition-delay: calc(0.045s * 6);
+        }
+
+        button:hover i:nth-child(7) {
+            transition-delay: calc(0.045s * 7);
+        }
+
+        button:hover i:nth-child(8) {
+            transition-delay: calc(0.045s * 8);
+        }
+
+        button:hover i:nth-child(9) {
+            transition-delay: calc(0.045s * 9);
+        }
+
+        button:hover i:nth-child(10) {
+            transition-delay: calc(0.045s * 10);
+        }
+
+        .content {
+            margin-top: 20px;
+            font-size: 1.2em;
+            color: #333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .animation-area {
+            background: linear-gradient(to left, #8942a8, #ba382f);
+            width: 100%;
+            height: 100vh;
+        }
+
+        .box-area {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .box-area li {
+            position: absolute;
+            display: block;
+            list-style: none;
+            width: 25px;
+            height: 25px;
+            background: rgba(255, 255, 255, 0.5);
+            animation: animate 20s linear infinite;
+            bottom: -150px;
+        }
+
+        .box-area li:nth-child(1) {
+            left: 86%;
+            width: 80px;
+            height: 80px;
+            animation-delay: 0s;
+        }
+
+        .box-area li:nth-child(2) {
+            left: 12%;
+            width: 30px;
+            height: 30px;
+            animation-delay: 0s;
+            animation-delay: 1.5s;
+            animation-duration: 10s;
+        }
+
+        .box-area li:nth-child(3) {
+            left: 70%;
+            width: 100px;
+            height: 100px;
+            animation-delay: 5.5s;
+        }
+
+        .box-area li:nth-child(4) {
+            left: 42%;
+            width: 150px;
+            height: 150px;
+            animation-delay: 0s;
+            animation-duration: 15s;
+        }
+
+        .box-area li:nth-child(5) {
+            left: 65%;
+            width: 40px;
+            height: 40px;
+            animation-delay: 0s;
+        }
+
+        .box-area li:nth-child(6) {
+            left: 15%;
+            width: 110px;
+            height: 110px;
+            animation-delay: 3.5s;
+        }
+
+        @keyframes animate {
+            0% {
+                transform: translateY(0)rotate(0deg);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(-800px)rotate(360deg);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="animation-area">
+        <ul class="box-area">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    <div class="container" style="top: 20%; z-index: 6;">
+        <h1 style="color: #ba382f; font-size: 60pt;">finn el humano</h1>
+    </div>
+    <div class="container" style="width: 1200px; height: 500px; align-items: center; z-index: 5;">
+        <div id="principal">
+            <ul class="w3-content w3-display-container slideshow">
+                <li class="mySlides w3-animate-left" style="width:100%"><span><img src="2.png" alt="first"></span>
+                </li>
+                <li class="mySlides w3-animate-left" style="width:100%"><span><img src="1.png" alt="second"></span>
+                </li>
+                <li class="mySlides w3-animate-left" style="width:100%"><span><img src="0.png" alt="third"></span>
+                </li>
+            </ul>
+        </div>
+        <div id="sidebar">
+            <p id="description">
+            Este es el contenido principal de la ficha técnica. Aquí va la descripción general.
+            </p>
+            <div class="buttons">
+                <p><button id="curiosidadesBtn" onclick="showContent('curiosidades')"
+                        alt="Curiosidades"><i>Curiosidades</i></button>
+                </p>
+                <p>
+                    <button id="aparecenciaBtn" onclick="showContent('aparecencia')"
+                        alt="Apariencia"><i>Apariencia</i></button>
+                </p>
+                <p>
+                    <button id="volverBtn" onclick="showContent('principal')" style="display: none;"
+                        alt="Volver"><i>Volver</i></button>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mostrar el contenido según el botón presionado
+        function showContent(section) {
+            const description = document.getElementById('description');
+            const curiosidadesBtn = document.getElementById('curiosidadesBtn');
+            const aparecenciaBtn = document.getElementById('aparecenciaBtn');
+            const volverBtn = document.getElementById('volverBtn');
+
+            const slides = document.getElementsByClassName('mySlides');
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none"; // Ocultar todas las imágenes
+            }
+
+
+            if (section === 'curiosidades') {
+                description.textContent = 'Finn el Humano es un personaje que tiene muchas curiosidades. Por ejemplo, a menudo busca aventuras junto a su amigo Jake el perro.';
+                curiosidadesBtn.classList.add('active');
+                aparecenciaBtn.classList.remove('active');
+                volverBtn.style.display = 'inline-block';
+
+                var i;
+                var x = document.getElementsByClassName("mySlides");
+
+                for (i = 0; i < x.length; i++) {
+                    x[i].style.display = "none";
+                }
+
+                slides[0].style.display = "block"; // Mostrar la primera imagen
+            } else if (section === 'aparecencia') {
+                description.textContent = 'Finn suele vestir una camiseta azul y pantalones cortos. Lleva una mochila verde y, en versiones más recientes, tiene un brazo robótico.';
+                aparecenciaBtn.classList.add('active');
+                curiosidadesBtn.classList.remove('active');
+                volverBtn.style.display = 'inline-block';
+                slides[1].style.display = "block"; // Mostrar la segunda imagen
+            } else {
+                description.textContent = 'Este es el contenido principal de la ficha técnica. Aquí va la descripción general.';
+                curiosidadesBtn.classList.remove('active');
+                aparecenciaBtn.classList.remove('active');
+                volverBtn.style.display = 'none';
+                slides[2].style.display = "block"; // Mostrar la tercera imagen
+            }
+        }
+
+        // Mostrar la primera imagen al cargar
+        document.addEventListener("DOMContentLoaded", function () {
+            document.getElementsByClassName('mySlides')[2].style.display = "block";
+        });
+    </script>
+
+</body>
+
+</html>
