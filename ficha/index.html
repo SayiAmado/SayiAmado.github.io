@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ficha Técnica - Finn el Humano</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="area" style="position: relative;">
+        <ul class="circles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+
+        <div class="parent">
+            <div class="div1">
+                <div class="context"></div>
+                <h1 style="color: azure; font-size: 85pt;"><b>Finn</b></h1>
+                <h2>El Humano</h2>
+            </div>
+            <div class="div2">
+                <div class="col-span-3 row-span-3 col-start-1 row-start-2">
+                    <div class="w3-content w3-section" style="max-width:500px">
+                        <img class="mySlides w3-animate-left" src="C:\Users\Ventas1041\Desktop\feh\0.png"
+                            style="width:100%">
+                        <img class="mySlides w3-animate-left" src="C:\Users\Ventas1041\Desktop\feh\1.png"
+                            style="width:100%">
+                        <img class="mySlides w3-animate-top" src="C:\Users\Ventas1041\Desktop\feh\2.png"
+                            style="width:100%">
+                    </div>
+                </div>
+            </div>
+            <div class="div3 container">
+                <p style="color: aliceblue;">Este es el contenido principal de la ficha técnica. Aquí va la descripción
+                    general.</p>
+            </div>
+            <div class="div4">
+                <button alt="Curiosidades">
+                    <i>c</i>
+                    <i>u</i>
+                    <i>r</i>
+                    <i>i</i>
+                    <i>o</i>
+                    <i>s</i>
+                    <i>i</i>
+                    <i>d</i>
+                    <i>a</i>
+                    <i>d</i>
+                    <i>e</i>
+                    <i>s</i>
+                </button>
+            </div>
+            <div class="div5">
+                <button alt="Apariencia">
+                    <i>a</i>
+                    <i>p</i>
+                    <i>a</i>
+                    <i>r</i>
+                    <i>i</i>
+                    <i>e</i>
+                    <i>n</i>
+                    <i>c</i>
+                    <i>i</i>
+                    <i>a</i>
+                </button>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <script>
+        var myIndex = 0;
+        carousel();
+
+        function carousel() {
+            var i;
+            var x = document.getElementsByClassName("mySlides");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            myIndex++;
+            if (myIndex > x.length) { myIndex = 1 }
+            x[myIndex - 1].style.display = "block";
+            setTimeout(carousel, 2500);
+        }
+    </script>
+</body>
+
+</html>
