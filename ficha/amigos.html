@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <title>Finn el Humano - Amigos</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background-image: url('img/fondo_pj.jpg');
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+        }
+
+        .imagen-fija-finn {
+            position: fixed;
+            /* Mantiene la imagen en una posición fija */
+            top: 47%;
+            /* Distancia desde la parte superior */
+            right: 60%;
+            /* Distancia desde la parte derecha */
+            width: 9vw;
+            /* Ancho relativo al ancho de la ventana */
+            height: 40%;
+            /* Mantiene la proporción de la imagen */
+            z-index: 1000;
+        }
+
+        .imagen-fija-jake {
+            position: fixed;
+            /* Mantiene la imagen en una posición fija */
+            top: 64%;
+            /* Distancia desde la parte superior */
+            right: 40%;
+            /* Distancia desde la parte derecha para alinearlo más a la derecha de Finn */
+            width: 10vw;
+            /* Ancho relativo al ancho de la ventana */
+            height: 23%;
+            /* Mantiene la proporción de la imagen */
+            z-index: 1001;
+        }
+        .imagen-fija-bmo {
+            position: fixed;
+            /* Mantiene la imagen en una posición fija */
+            top: 78%;
+            /* Distancia desde la parte superior */
+            right: 60%;
+            /* Distancia desde la parte derecha para alinearlo más a la derecha de Finn */
+            width: 7vw;
+            /* Ancho relativo al ancho de la ventana */
+            height: 12%;
+            /* Mantiene la proporción de la imagen */
+            z-index: 1001;
+        }
+        .imagen-fija-canela {
+            position: fixed;
+            /* Mantiene la imagen en una posición fija */
+            top: 43%;
+            /* Distancia desde la parte superior */
+            right: 8%;
+            /* Distancia desde la parte derecha para alinearlo más a la derecha de Finn */
+            width: 18vw;
+            /* Ancho relativo al ancho de la ventana */
+            height: 45%;
+            /* Mantiene la proporción de la imagen */
+            z-index: 997;
+        }
+        .imagen-fija-conde {
+            position: fixed;
+            /* Mantiene la imagen en una posición fija */
+            top: 41%;
+            /* Distancia desde la parte superior */
+            right: 23%;
+            /* Distancia desde la parte derecha para alinearlo más a la derecha de Finn */
+            width: 10vw;
+            /* Ancho relativo al ancho de la ventana */
+            height: 45%;
+            /* Mantiene la proporción de la imagen */
+            z-index: 987;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            /* Centra el contenedor horizontalmente */
+            align-items: center;
+            /* Centra el contenedor verticalmente */
+            height: 100%;
+        }
+
+        .button-wrapper {
+            display: flex;
+            width: 50%;
+            /* Ajusta el ancho según sea necesario */
+            justify-content: space-between;
+            /* Espacio entre los botones */
+            z-index: 10;
+        }
+
+        .button-wrapper button {
+            padding: 15px 30px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                justify-content: center;
+            }
+
+            .button-wrapper {
+                width: 100%;
+                position: fixed;
+                bottom: 0;
+                justify-content: space-around;
+                background-color: transparent;
+                padding: 10px 0;
+            }
+
+            .button-wrapper button {
+                flex: 1;
+                margin: 0 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="logo">
+        <a href="versiones.html">
+            <span title="Versiones alternas de Finn!">
+                <img class="shadowfilter imagen-fija-finn" src="img/amigos/Finn.webp">
+            </span>
+        </a>
+        
+    </div>
+    <img class="shadowfilter imagen-fija-jake" src="img/amigos/Jake.webp">
+    <img class="shadowfilter imagen-fija-bmo" src="img/amigos/BMO.webp">
+    <img class="shadowfilter imagen-fija-canela" src="img/amigos/Cinnamon.webp">
+    <img class="shadowfilter imagen-fija-conde" src="img/amigos/Conde.webp">
+</body>
+
+</html>

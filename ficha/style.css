@@ -33,7 +33,7 @@ h1 {
 
 
 .area {
-    background-image: url("fondo.png");
+    background-image: url("img/fondo.png");
     background: -webkit-linear-gradient(to left, #8f94fb, #4e54c8);
     background-size: cover;
     -moz-background-size: cover;
@@ -221,20 +221,16 @@ button {
 
 #logo img {
     position: fixed;
-    /* Mantiene la imagen en una posición fija */
     top: 47%;
-    /* Distancia desde la parte superior */
     right: 45%;
-    /* Distancia desde la parte derecha */
     width: 9vw;
-    /* Ancho relativo al ancho de la ventana */
     height: 40%;
-    /* Mantiene la proporción de la imagen */
     z-index: 1000;
 }
 
 .shadowfilter {
     -webkit-filter: drop-shadow(0px 0px 4px rgba(255, 255, 255, 0.80));
+            filter: drop-shadow(0px 0px 4px rgba(255, 255, 255, 0.80));
     -webkit-transition: all 0.5s linear;
     -o-transition: all 0.5s linear;
     transition: all 0.5s linear;
@@ -243,9 +239,10 @@ button {
 
 .shadowfilter:hover {
     -webkit-filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.8));
+            filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.8));
 }
 
-@media (max-width: 768px) {
+@media (max-width: 600px) {
 
 
     .parent {
@@ -271,7 +268,6 @@ button {
         box-sizing: border-box;
     }
 
-    /* card sizing and background */
     .card {
         padding: 17px;
         height: 550px;
@@ -290,6 +286,7 @@ button {
     }
 
     .card-body {
+        justify-content: center;
         position: relative;
         height: 485px;
         width: 97%;
@@ -297,32 +294,32 @@ button {
         z-index: 4;
         margin: 0 auto;
     }
-
     article {
+        position: fixed;
         padding: 3px;
-        width: 350px;
+        width: 100%;
     }
 
     article>div.art,
     article>div.textbox {
         background: transparent;
         position: relative;
-        height: 235.031px;
+        height: 40%;
         z-index: 5;
     }
 
     div.art {
-        width: 95%;
+        width: 70%;
         margin: 0 auto;
-        top: -485px;
+        top: -480px;
     }
 
     div.art img {
-        width: 100%;
-        height: auto;
+        width: 80%;
+        height: 30%;
         position: relative;
         top: -10px;
-        z-index: 2;
+        z-index: 3;
     }
 
 
@@ -335,7 +332,7 @@ button {
         top: -485px;
         left: 0;
         right: 0;
-        z-index: 5;
+        z-index: 2;
     }
 
     header div {
@@ -350,6 +347,7 @@ button {
 
     header.card-name {
         top: -485px;
+        align-content: center;
     }
 
     header.card-name div {
@@ -368,21 +366,22 @@ button {
     }
 
     .powerToughness {
-        width: 4em;
+        width: 7em;
         top: -490px;
         right: 0;
         text-align: center;
-        box-shadow: -2px 1px 2px 0 rgba(0, 0, 0, 0.8);
         float: right;
         overflow: hidden;
+        z-index: 10000;
     }
 
     .powerToughness div {
-        padding: 4px 0 0;
-        height: 23px;
+        padding: 6px 1 0;
+        height: 40px;
         box-shadow: inset -2px 2px 1px #333, inset 1px -1px 0 #fff;
         border: 0 none;
         font-size: 21px;
+        z-index: 10000;
     }
 
     .ms {
@@ -402,7 +401,7 @@ button {
 
 
     h2 {
-        font-size: 18px;
+        font-size: 21px;
         line-height: 1em;
         color: #dfdfdf;
     }

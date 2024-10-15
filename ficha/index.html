@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ficha Técnica - Finn el Humano</title>
+    <title>Finn el Humano - Pagina Inicial</title>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
         integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -33,12 +33,184 @@
             /* Mantiene la proporción de la imagen */
             z-index: 1000;
         }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            /* Centra el contenedor horizontalmente */
+            align-items: center;
+            /* Centra el contenedor verticalmente */
+            height: 100%;
+        }
+
+        .button-wrapper {
+            display: flex;
+            width: 50%;
+            /* Ajusta el ancho según sea necesario */
+            justify-content: space-between;
+            /* Espacio entre los botones */
+            z-index: 10;
+        }
+
+        .button-wrapper button {
+            padding: 15px 30px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        /* Btn1 */
+        .Btn {
+            position: relative;
+            width: 150px;
+            height: 55px;
+            border-radius: 45px;
+            border: none;
+            background-color: rgb(228, 248, 140);
+            color: rgb(0, 0, 0);
+            box-shadow: 0px 10px 10px rgb(189, 170, 0) inset,
+                0px 5px 10px rgba(5, 5, 5, 0.212),
+                0px -10px 10px rgb(187, 190, 3) inset;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .Btn::before {
+            width: 70%;
+            height: 2px;
+            position: absolute;
+            background-color: rgba(250, 250, 250, 0.678);
+            content: "";
+            filter: blur(1px);
+            top: 7px;
+            border-radius: 50%;
+        }
+
+        .Btn::after {
+            width: 70%;
+            height: 2px;
+            position: absolute;
+            background-color: rgba(250, 250, 250, 0.137);
+            content: "";
+            filter: blur(1px);
+            bottom: 7px;
+            border-radius: 50%;
+        }
+
+        .Btn:hover {
+            animation: jello-horizontal 0.9s both;
+        }
+
+        /* Btn2 */
+        .Btn2 {
+            position: relative;
+            width: 150px;
+            height: 55px;
+            border-radius: 45px;
+            border: none;
+            background-color: rgb(194, 162, 196);
+            color: rgb(255, 255, 255);
+            box-shadow: 0px 10px 10px rgb(224, 124, 224) inset,
+                0px 5px 10px rgba(5, 5, 5, 0.212),
+                0px -10px 10px rgb(162, 2, 177) inset;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .Btn2::before {
+            width: 70%;
+            height: 2px;
+            position: absolute;
+            background-color: rgba(250, 250, 250, 0.678);
+            content: "";
+            filter: blur(1px);
+            top: 7px;
+            border-radius: 50%;
+        }
+
+        .Btn2::after {
+            width: 70%;
+            height: 2px;
+            position: absolute;
+            background-color: rgba(250, 250, 250, 0.137);
+            content: "";
+            filter: blur(1px);
+            bottom: 7px;
+            border-radius: 50%;
+        }
+
+        .Btn2:hover {
+            animation: jello-horizontal 0.9s both;
+        }
+
+        @keyframes jello-horizontal {
+            0% {
+                transform: scale3d(1, 1, 1);
+            }
+
+            30% {
+                transform: scale3d(1.25, 0.75, 1);
+            }
+
+            40% {
+                transform: scale3d(0.75, 1.25, 1);
+            }
+
+            50% {
+                transform: scale3d(1.15, 0.85, 1);
+            }
+
+            65% {
+                transform: scale3d(0.95, 1.05, 1);
+            }
+
+            75% {
+                transform: scale3d(1.05, 0.95, 1);
+            }
+
+            100% {
+                transform: scale3d(1, 1, 1);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                justify-content: center;
+            }
+
+            .button-wrapper {
+                width: 100%;
+                position: fixed;
+                bottom: 0;
+                justify-content: space-around;
+                background-color: transparent;
+                padding: 10px 0;
+            }
+
+            .button-wrapper button {
+                flex: 1;
+                margin: 0 10px;
+            }
+        }
     </style>
-</head>
 
 <body>
+
+    <div class="container">
+        <div class="button-wrapper">
+            <a href="finn.html"><button class="Btn" id="boton-izquierdo"><b>Ficha</b></button></a>
+            <a href="amigos.html"><button class="Btn2" id="boton-derecho">Amigos</button></a>
+        </div>
+    </div>
     <div id="logo">
-        <img class="shadowfilter" src="img\finn-home.png" alt="Imagen Fija" class="imagen-fija">
+        <a href="versiones.html">
+            <span title="Versiones alternas de Finn!">
+                <img class="shadowfilter" src="img\finn-home.png" alt="Imagen Fija" class="imagen-fija">
+            </span>
+        </a>
     </div>
 </body>
 

@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <div class="area" style="position: relative;">
+    <div class="area">
         <ul class="circles">
             <li></li>
             <li></li>
@@ -29,75 +29,47 @@
             <div class="card-body"></div>
             <header class="card-name">
                 <div id="header">
-                    <p>
                     <h1 style="color: azure;"><b>Finn</b></h1>
-                    <h1 style="color: black;">El Humano</h>
-                        </p>
-                        <i class="ms ms-u ms-cost ms-shadow"></i>
+                    <h1 style="color: black;">El Humano</h1>
+                    <i class="ms ms-u ms-cost ms-shadow"></i>
                 </div>
             </header>
-            <div class="art col-span-3 row-span-3 col-start-1 row-start-2">
-                <div class="w3-content w3-section" style="max-width:500px">
-                    <img class="mySlides w3-animate-left" src="0.png" style="width:100%">
-                    <img class="mySlides w3-animate-left" src="1.png" style="width:100%">
-                    <img class="mySlides w3-animate-top" src="2.png" style="width:100%">
+            <div class="art col-span-3 row-span-3 col-start-1 row-start-2" style="position: relative; z-index: 2;">
+                <div class="w3-content w3-section" style="max-width:500px;">
+                    <img class="mySlides w3-animate-left" src="img/0.png" style="width:100%">
+                    <img class="mySlides w3-animate-left" src="img/1.png" style="width:100%">
+                    <img class="mySlides w3-animate-top" src="img/2.png" style="width:100%">
                 </div>
             </div>
-            <header class="card-type">
-                <div>
-                    <h2>Aventurero - Humano <i class="ss ss-tor"></i></h2>
+            <header class="card-type" style="z-index: 6;">
+                <div  style="vertical-align: middle;">
+                    <h2>Aventurero - Humano</h2>
                 </div>
             </header>
-            <div class="textBox" style="z-index: 5;">
+            <div class="textBox" style="z-index: 6;">
                 <p style="color: aliceblue;">Finn el Humano es un personaje que tiene muchas curiosidades. Por ejemplo,
                     a menudo busca aventuras junto a su amigo Jake el perro.</p>
                 <p style="color: aliceblue;">Finn suele vestir una camiseta azul y pantalones cortos. Lleva una mochila
                     verde y, en versiones más recientes, tiene un brazo robótico.
                 </p>
             </div>
-            <header class="powerToughness">
-                <div style="font-size: 10px; color: aliceblue;">
-                    <button alt="►">🏠</button>
-                </div>
-            </header>
-            <header class="powerToughness">
-                <div style="font-size: 10px; color: aliceblue;">
-                    <button alt="►">Versiones</button>
-                </div>
-            </header>
-            <header class="powerToughness">
-                <div style="font-size: 10px; color: aliceblue;">
-                    <button alt="◄">Amigos</button>
-                </div>
-            </header>
-
-            <button alt="Curiosidades">
-                <i>c</i>
-                <i>u</i>
-                <i>r</i>
-                <i>i</i>
-                <i>o</i>
-                <i>s</i>
-                <i>i</i>
-                <i>d</i>
-                <i>a</i>
-                <i>d</i>
-                <i>e</i>
-                <i>s</i>
-            </button>
-            <i>&nbsp;</i>
-            <button alt="Apariencia">
-                <i>a</i>
-                <i>p</i>
-                <i>a</i>
-                <i>r</i>
-                <i>i</i>
-                <i>e</i>
-                <i>n</i>
-                <i>c</i>
-                <i>i</i>
-                <i>a</i>
-            </button>
+            <div style="position: relative; z-index: 10000;">
+                <header class="powerToughness">
+                    <div style="font-size: 20px; color: aliceblue;">
+                        <a href="index.html" class="btn-button" aria-label="Inicio" style="color: aliceblue;">🏠</a>
+                    </div>
+                </header>
+                <header class="powerToughness">
+                    <div style="font-size: 20px; color: aliceblue;">
+                        <a href="versiones.html" class="btn-button" aria-label="Versiones" style="color: aliceblue;">Versiones</a>
+                    </div>
+                </header>
+                <header class="powerToughness">
+                    <div style="font-size: 20px; color: aliceblue;">
+                        <a href="amigos.html" class="btn-button" aria-label="Amigos" style="color: aliceblue;">Amigos</a>
+                    </div>
+                </header>
+            </div>
         </article>
     </div>
     <script>

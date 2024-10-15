@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <title>Finn el Humano - Versiones alternas</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Estilos para las diapositivas */
+        .mySlides {
+            display: none;
+        }
+
+        /* Cursor para controles e indicadores */
+        .w3-left, .w3-right, .w3-badge {
+            cursor: pointer;
+        }
+
+        /* Estilos para los indicadores (miniaturas) */
+        .w3-badge {
+            height: 50px;
+            width: 50px;
+            margin: 5px;
+            background-size: cover;
+        }
+
+        /* Estilo para el contenedor del slideshow */
+        .slideshow-container {
+            width: 75%; /* Ocupa el 75% del ancho de la ventana */
+            margin: auto; /* Centra el contenedor */
+        }
+
+        /* Asegura que las imágenes se ajusten al contenedor */
+        .slideshow-container img {
+            width: 100%;
+            height: auto;
+        }
+
+        /* Estilo para los indicadores (miniaturas) */
+        .indicators img {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+
+<div class="w3-container">
+    <div class="w3-container">
+        <h2>Versiones alternas de Finn</h2>
+        <p>En la serie, se han visto multiples versiones del personaje, algunos representan transformaciones, posibles
+            futuros y otras versiones de universos alternos.</p>
+    </div>
+    <div class="w3-content w3-display-container slideshow-container">
+        <div class="mySlides w3-display-container">
+            <img src="img\0.png" style="width:100%">
+            <div class="w3-display-bottomleft w3-large w3-container w3-padding-16 w3-black">
+                Imagen 1 - Descripción
+            </div>
+        </div>
+
+        <div class="mySlides w3-display-container">
+            <img src="img\1.png" style="width:100%">
+            <div class="w3-display-bottomleft w3-large w3-container w3-padding-16 w3-black">
+                Imagen 2 - Descripción
+            </div>
+        </div>
+
+        <div class="mySlides w3-display-container">
+            <img src="img\2.png" style="width:100%">
+            <div class="w3-display-bottomleft w3-large w3-container w3-padding-16 w3-black">
+                Imagen 3 - Descripción
+            </div>
+        </div>
+        <a class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</a>
+        <a class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</a>
+
+    </div>
+
+    <div class="w3-row-padding w3-section">
+        <div class="w3-col s4">
+            <img class="w3-badge demo" src="img\0.png" onclick="currentDiv(1)">
+        </div>
+        <div class="w3-col s4">
+            <img class="w3-badge demo" src="img\1.png" onclick="currentDiv(2)">
+        </div>
+        <div class="w3-col s4">
+            <img class="w3-badge demo" src="img\2.png" onclick="currentDiv(3)">
+        </div>
+    </div>
+</div>
+
+<script>
+    var slideIndex = 1;
+    showDivs(slideIndex);
+
+    function plusDivs(n) {
+        showDivs(slideIndex += n);
+    }
+
+    function currentDiv(n) {
+        showDivs(slideIndex = n);
+    }
+
+    function showDivs(n) {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("demo");
+        if (n > x.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = x.length}
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" w3-opacity-off", "");
+        }
+        x[slideIndex-1].style.display = "block";
+        dots[slideIndex-1].className += " w3-opacity-off";
+    }
+</script>
+
+</body>
+</html>
