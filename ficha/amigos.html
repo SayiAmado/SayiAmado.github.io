@@ -18,6 +18,7 @@
             background-repeat: no-repeat;
         }
 
+
         .imagen-fija-finn {
             position: fixed;
             /* Mantiene la imagen en una posición fija */
@@ -63,6 +64,7 @@
             /* Mantiene la proporción de la imagen */
             z-index: 1001;
         }
+
         .imagen-fija-bmo:hover~.notification-bmo {
             display: flex;
         }
@@ -81,6 +83,10 @@
             z-index: 997;
         }
 
+        .imagen-fija-canela:hover~.notification-canela {
+            display: flex;
+        }
+
         .imagen-fija-conde {
             position: fixed;
             /* Mantiene la imagen en una posición fija */
@@ -93,6 +99,10 @@
             height: 45%;
             /* Mantiene la proporción de la imagen */
             z-index: 987;
+        }
+
+        .imagen-fija-conde:hover~.notification-conde {
+            display: flex;
         }
 
         .imagen-fija-lady {
@@ -109,6 +119,10 @@
             z-index: 667;
         }
 
+        .imagen-fija-lady:hover~.notification-lady {
+            display: flex;
+        }
+
         .imagen-fija-mentita {
             position: fixed;
             /* Mantiene la imagen en una posición fija */
@@ -121,6 +135,10 @@
             height: 27%;
             /* Mantiene la proporción de la imagen */
             z-index: 988;
+        }
+
+        .imagen-fija-mentita:hover~.notification-mentita {
+            display: flex;
         }
 
         .imagen-fija-marceline {
@@ -137,6 +155,10 @@
             z-index: 978;
         }
 
+        .imagen-fija-marceline:hover~.notification-marceline {
+            display: flex;
+        }
+
         .imagen-fija-rey {
             position: fixed;
             /* Mantiene la imagen en una posición fija */
@@ -149,6 +171,10 @@
             height: 37%;
             /* Mantiene la proporción de la imagen */
             z-index: 968;
+        }
+
+        .imagen-fija-rey:hover~.notification-rey {
+            display: flex;
         }
 
         .imagen-fija-princesa {
@@ -165,6 +191,10 @@
             z-index: 967;
         }
 
+        .imagen-fija-princesa:hover~.notification-princesa {
+            display: flex;
+        }
+
         .imagen-fija-phoebe {
             position: fixed;
             /* Mantiene la imagen en una posición fija */
@@ -177,6 +207,10 @@
             height: 45%;
             /* Mantiene la proporción de la imagen */
             z-index: 900;
+        }
+
+        .imagen-fija-phoebe:hover~.notification-phoebe {
+            display: flex;
         }
 
         .imagen-fija-grumosa {
@@ -193,16 +227,19 @@
             z-index: 800;
         }
 
-
-
+        .imagen-fija-grumosa:hover~.notification-grumosa {
+            display: flex;
+        }
 
         .container {
+            position: fixed;
             display: flex;
             justify-content: center;
             /* Centra el contenedor horizontalmente */
-            align-items: center;
+            align-items: end;
             /* Centra el contenedor verticalmente */
             height: 100%;
+            z-index: 100000;
         }
 
         .button-wrapper {
@@ -215,7 +252,7 @@
         }
 
         .button-wrapper button {
-            padding: 15px 30px;
+            padding: 20px 30px;
             font-size: 16px;
             cursor: pointer;
         }
@@ -251,6 +288,85 @@
             --gradient: linear-gradient(to bottom, #4d79f3, #92d3ff, #4cb7ff);
             --color: #4cb7ff
         }
+
+        .notification-canela {
+            display: none;
+            top: 64%;
+            right: 4%;
+            --gradient: linear-gradient(to bottom, #97551f, #ffe292, #ffb74c);
+            --color: #ffb74c
+        }
+
+        .notification-conde {
+            display: none;
+            top: 52%;
+            right: 4%;
+            --gradient: linear-gradient(to bottom, #77971f, #acff92, #76ff4c);
+            --color: #76ff4c
+        }
+
+        .notification-phoebe {
+            display: none;
+            top: 64%;
+            right: 14%;
+            --gradient: linear-gradient(to bottom, #ec1e1e, #fbff0a, #ff6600);
+            --color: #ff6600
+        }
+
+        .notification-grumosa {
+            display: none;
+            top: 34%;
+            right: 18%;
+            height: 27%;
+            --gradient: linear-gradient(to bottom, #ec1eec, #7c055e, #ec1eec);
+            --color: #ec1eec
+        }
+
+        .notification-princesa {
+            display: none;
+            top: 52%;
+            right: 20%;
+            height: 27%;
+            --gradient: linear-gradient(to bottom, #ec1eec, #f384d7, #ec1eec);
+            --color: #ec1eec
+        }
+
+        .notification-rey {
+            display: none;
+            top: 52%;
+            right: 28%;
+            height: 27%;
+            --gradient: linear-gradient(to bottom, #00eeff, #008cff, #001aff);
+            --color: #00eeff
+        }
+
+        .notification-marceline {
+            display: none;
+            top: 52%;
+            right: 40%;
+            height: 27%;
+            --gradient: linear-gradient(to bottom, #000000, #313436, #000000);
+            --color: #888e92
+        }
+
+        .notification-mentita {
+            display: none;
+            top: 59%;
+            right: 50%;
+            height: 27%;
+            --gradient: linear-gradient(to bottom, #ff0000, #ffffff, #ff0000);
+            --color: #ff0000
+        }
+
+        .notification-lady {
+            display: none;
+            top: 12%;
+            right: 25%;
+            height: 27%;
+            --gradient: linear-gradient(to bottom, #e5ff00, #e100ff, #ff0000);
+            --color: #00eeff
+        }
+
 
         .notification:before {
             position: absolute;
@@ -338,38 +454,235 @@
             width: 75%;
         }
 
+        /* Btn1 */
+        .Btn {
+            position: relative;
+            width: 150px;
+            height: 55px;
+            border-radius: 45px;
+            border: none;
+            background-color: rgb(228, 248, 140);
+            color: rgb(0, 0, 0);
+            box-shadow: 0px 10px 10px rgb(189, 170, 0) inset,
+                0px 5px 10px rgba(5, 5, 5, 0.212),
+                0px -10px 10px rgb(187, 190, 3) inset;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .Btn::before {
+            width: 70%;
+            height: 2px;
+            position: absolute;
+            background-color: rgba(250, 250, 250, 0.678);
+            content: "";
+            filter: blur(1px);
+            top: 7px;
+            border-radius: 50%;
+        }
+
+        .Btn::after {
+            width: 70%;
+            height: 2px;
+            position: absolute;
+            background-color: rgba(250, 250, 250, 0.137);
+            content: "";
+            filter: blur(1px);
+            bottom: 7px;
+            border-radius: 50%;
+        }
+
+        .Btn:hover {
+            animation: jello-horizontal 0.9s both;
+        }
+
+        /* Btn2 */
+        .Btn2 {
+            position: relative;
+            width: 150px;
+            height: 55px;
+            border-radius: 45px;
+            border: none;
+            background-color: rgb(0, 216, 187);
+            color: rgb(255, 255, 255);
+            box-shadow: 0px 10px 10px rgb(0, 201, 151) inset,
+                0px 5px 10px rgba(5, 5, 5, 0.212),
+                0px -10px 10px rgb(0, 111, 214) inset;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+        }
+
+        .Btn2::before {
+            width: 70%;
+            height: 2px;
+            position: absolute;
+            background-color: rgba(250, 250, 250, 0.678);
+            content: "";
+            filter: blur(1px);
+            top: 7px;
+            border-radius: 50%;
+        }
+
+        .Btn2::after {
+            width: 70%;
+            height: 2px;
+            position: absolute;
+            background-color: rgba(250, 250, 250, 0.137);
+            content: "";
+            filter: blur(1px);
+            bottom: 7px;
+            border-radius: 50%;
+        }
+
+        .Btn2:hover {
+            animation: jello-horizontal 0.9s both;
+        }
+
+        @keyframes jello-horizontal {
+            0% {
+                transform: scale3d(1, 1, 1);
+            }
+
+            30% {
+                transform: scale3d(1.25, 0.75, 1);
+            }
+
+            40% {
+                transform: scale3d(0.75, 1.25, 1);
+            }
+
+            50% {
+                transform: scale3d(1.15, 0.85, 1);
+            }
+
+            65% {
+                transform: scale3d(0.95, 1.05, 1);
+            }
+
+            75% {
+                transform: scale3d(1.05, 0.95, 1);
+            }
+
+            100% {
+                transform: scale3d(1, 1, 1);
+            }
+        }
+
         @media (max-width: 768px) {
-            .container {
+            body {
                 justify-content: center;
+                align-items: center;
+                height: 100%;
+                min-height: 100vh;
+                background-size: cover;
+                background-position: 10%;
+            }
+
+            #logo picture img {
+                position: fixed;
+                top: 10px;
+                right: 10px;
+                width: 60px;
+                height: auto;
+                z-index: 9000;
             }
 
             .button-wrapper {
                 width: 100%;
-                position: fixed;
-                bottom: 0;
-                justify-content: space-around;
+                position: relative;
+                justify-content: center;
                 background-color: transparent;
                 padding: 10px 0;
+                margin-top: 40px;
             }
 
             .button-wrapper button {
-                flex: 1;
+                flex: none;
                 margin: 0 10px;
+                width: 45%;
+            }
+
+            .imagen-fija-finn,
+            .imagen-fija-jake,
+            .imagen-fija-bmo,
+            .imagen-fija-canela,
+            .imagen-fija-conde,
+            .imagen-fija-lady,
+            .imagen-fija-mentita,
+            .imagen-fija-marceline,
+            .imagen-fija-rey,
+            .imagen-fija-princesa,
+            .imagen-fija-phoebe,
+            .imagen-fija-grumosa {
+                position: static;
+                width: 80%;
+                height: auto;
+                margin: 20px 0;
+            }
+
+            .notification {
+                position: static;
+                width: 90%;
+                margin-bottom: 20px;
+                display: flex;
+                font-size: medium;
+            }
+
+            .notification-jake {
+                top: 15%;
+                right: 20%;
+                --gradient: linear-gradient(to bottom, #ffb62e, #eecd12, #fbff00);
+                --color: #fbff00
+            }
+
+            .notification:before {
+                display: none;
+            }
+
+            .notification:after {
+                display: none;
+            }
+
+            .imagen-fija-finn:active~.notification,
+            .imagen-fija-jake:active~.notification,
+            .imagen-fija-bmo:active~.notification,
+            .imagen-fija-canela:active~.notification,
+            .imagen-fija-conde:active~.notification,
+            .imagen-fija-lady:active~.notification,
+            .imagen-fija-mentita:active~.notification,
+            .imagen-fija-marceline:active~.notification,
+            .imagen-fija-rey:active~.notification,
+            .imagen-fija-princesa:active~.notification,
+            .imagen-fija-phoebe:active~.notification,
+            .imagen-fija-grumosa:active~.notification {
+                display: flex;
             }
         }
     </style>
 </head>
 
 <body>
-    <div id="logo">
-        <a href="versiones.html">
-            <span title="Versiones alternas de Finn!">
-                <img class="shadowfilter imagen-fija-finn" src="img/amigos/Finn.webp">
-            </span>
+    <div id="logo" style="z-index: 10000;">
+        <a href="versiones.html" title="Versiones alternas de Finn!">
+            <picture>
+                <source media="(max-width: 768px)" srcset="img/amigos/icon.png">
+                <img class="shadowfilter imagen-fija-finn" src="img/amigos/Finn.webp" alt="Finn el Humano">
+            </picture>
         </a>
-
+        <div class="container">
+            <div class="button-wrapper">
+                <a href="finn.html"><button class="Btn" id="boton-izquierdo"><b>Ficha</b></button></a>
+                &nbsp;
+                <a href="index.html"><button class="Btn2" id="boton-derecho">Inicio</button></a>
+            </div>
+        </div>
     </div>
-    <img class="shadowfilter imagen-fija-jake" src="img/amigos/Jake.webp">
+    <img class="shadowfilter imagen-fija-jake friend" src="img/amigos/Jake.webp">
     <div class="notification notification-jake">
         <div class="notiglow"></div>
         <div class="notiborderglow"></div>
@@ -384,14 +697,72 @@
         <div class="notibody">Es como un hermano menos para Finn. Es una consola con un gran corazón</div>
     </div>
     <img class="shadowfilter imagen-fija-canela" src="img/amigos/Cinnamon.webp">
+    <div class="notification notification-canela">
+        <div class="notiglow"></div>
+        <div class="notiborderglow"></div>
+        <div class="notititle">Pan de Canela</div>
+        <div class="notibody">Es un pan de canela :v</div>
+    </div>
     <img class="shadowfilter imagen-fija-conde" src="img/amigos/Conde.webp">
+    <div class="notification notification-conde">
+        <div class="notiglow"></div>
+        <div class="notiborderglow"></div>
+        <div class="notititle">Conde Limonagrio</div>
+        <div class="notibody">Un conde de una tierra de limones y un gobierno tiranico.</div>
+    </div>
     <img class="shadowfilter imagen-fija-lady" src="img/amigos/LadyRainicorn.webp">
+    <div class="notification notification-lady">
+        <div class="notiglow"></div>
+        <div class="notiborderglow"></div>
+        <div class="notititle">Arcoiris</div>
+        <div class="notibody">Una lluviacornio esposa de Jake y mejor amiga de la Dulce Princesa.</div>
+    </div>
     <img class="shadowfilter imagen-fija-mentita" src="img/amigos/Peppermint_Butler.webp">
+    <div class="notification notification-mentita">
+        <div class="notiglow"></div>
+        <div class="notiborderglow"></div>
+        <div class="notititle">Mentita</div>
+        <div class="notibody">El mayordomo de la dulce princesa. Posee conocimientos de lo oscuro y sobrenatural.</div>
+    </div>
     <img class="shadowfilter imagen-fija-marceline" src="img/amigos/Marceline.webp">
+    <div class="notification notification-marceline">
+        <div class="notiglow"></div>
+        <div class="notiborderglow"></div>
+        <div class="notititle">Marceline</div>
+        <div class="notibody">Marcy, la reina de los vampiros. Tiene un gran talento con el bajo y es la hija del rey de
+            la nocheosfera, posee un pasado con Simon</div>
+    </div>
     <img class="shadowfilter imagen-fija-rey" src="img/amigos/Ice_King.webp">
+    <div class="notification notification-rey">
+        <div class="notiglow"></div>
+        <div class="notiborderglow"></div>
+        <div class="notititle">Rey Helado</div>
+        <div class="notibody">Conocido anteriormente como Simon Petrikov. Un poderoso mago con el control de los
+            secretos del hielo, tiene un pingüino llamado Gunther</div>
+    </div>
     <img class="shadowfilter imagen-fija-princesa" src="img/amigos/DulcePrincesa.webp">
+    <div class="notification notification-princesa">
+        <div class="notiglow"></div>
+        <div class="notiborderglow"></div>
+        <div class="notititle">Dulce Princesa</div>
+        <div class="notibody">La princesa del dulce reino, fanatica de la ciencia. Su verdadero nombre es Bonnibel,
+            oculta secretos a su pueblo y a sus amigos.</div>
+    </div>
     <img class="shadowfilter imagen-fija-phoebe" src="img/amigos/FlamePrincess.webp">
+    <div class="notification notification-phoebe">
+        <div class="notiglow"></div>
+        <div class="notiborderglow"></div>
+        <div class="notititle">Princesa Flama</div>
+        <div class="notibody">Lider del reino de fuego. Derroco a su padre por el bien de su pueblo</div>
+    </div>
     <img class="shadowfilter imagen-fija-grumosa" src="img/amigos/PrincesaGrumosa.webp">
+    <div class="notification notification-grumosa">
+        <div class="notiglow"></div>
+        <div class="notiborderglow"></div>
+        <div class="notititle">Princesa Grumosa</div>
+        <div class="notibody">Estos grumos. Que quieres besar y abrazar. Estos grumos. No puedes por que eres burro. Un
+            burrooooo.</div>
+    </div>
 </body>
 
 </html>
