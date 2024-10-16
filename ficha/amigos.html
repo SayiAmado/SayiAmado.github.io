@@ -25,7 +25,7 @@
             /* Distancia desde la parte superior */
             right: 60%;
             /* Distancia desde la parte derecha */
-            width: 9vw;
+            width: 11vw;
             /* Ancho relativo al ancho de la ventana */
             height: 40%;
             /* Mantiene la proporción de la imagen */
@@ -39,12 +39,17 @@
             /* Distancia desde la parte superior */
             right: 40%;
             /* Distancia desde la parte derecha para alinearlo más a la derecha de Finn */
-            width: 10vw;
+            width: 9vw;
             /* Ancho relativo al ancho de la ventana */
             height: 23%;
             /* Mantiene la proporción de la imagen */
             z-index: 1001;
         }
+
+        .imagen-fija-jake:hover~.notification-jake {
+            display: flex;
+        }
+
         .imagen-fija-bmo {
             position: fixed;
             /* Mantiene la imagen en una posición fija */
@@ -52,12 +57,16 @@
             /* Distancia desde la parte superior */
             right: 60%;
             /* Distancia desde la parte derecha para alinearlo más a la derecha de Finn */
-            width: 7vw;
+            width: 5vw;
             /* Ancho relativo al ancho de la ventana */
             height: 12%;
             /* Mantiene la proporción de la imagen */
             z-index: 1001;
         }
+        .imagen-fija-bmo:hover~.notification-bmo {
+            display: flex;
+        }
+
         .imagen-fija-canela {
             position: fixed;
             /* Mantiene la imagen en una posición fija */
@@ -71,6 +80,7 @@
             /* Mantiene la proporción de la imagen */
             z-index: 997;
         }
+
         .imagen-fija-conde {
             position: fixed;
             /* Mantiene la imagen en una posición fija */
@@ -78,12 +88,113 @@
             /* Distancia desde la parte superior */
             right: 23%;
             /* Distancia desde la parte derecha para alinearlo más a la derecha de Finn */
-            width: 10vw;
+            width: 8vw;
             /* Ancho relativo al ancho de la ventana */
             height: 45%;
             /* Mantiene la proporción de la imagen */
             z-index: 987;
         }
+
+        .imagen-fija-lady {
+            position: fixed;
+            /* Mantiene la imagen en una posición fija */
+            top: 2%;
+            /* Distancia desde la parte superior */
+            right: 49%;
+            /* Distancia desde la parte derecha para alinearlo más a la derecha de Finn */
+            width: 40vw;
+            /* Ancho relativo al ancho de la ventana */
+            height: 78%;
+            /* Mantiene la proporción de la imagen */
+            z-index: 667;
+        }
+
+        .imagen-fija-mentita {
+            position: fixed;
+            /* Mantiene la imagen en una posición fija */
+            top: 64%;
+            /* Distancia desde la parte superior */
+            right: 75%;
+            /* Distancia desde la parte derecha para alinearlo más a la derecha de Finn */
+            width: 11vw;
+            /* Ancho relativo al ancho de la ventana */
+            height: 27%;
+            /* Mantiene la proporción de la imagen */
+            z-index: 988;
+        }
+
+        .imagen-fija-marceline {
+            position: fixed;
+            /* Mantiene la imagen en una posición fija */
+            top: 40%;
+            /* Distancia desde la parte superior */
+            right: 65%;
+            /* Distancia desde la parte derecha para alinearlo más a la derecha de Finn */
+            width: 7vw;
+            /* Ancho relativo al ancho de la ventana */
+            height: 47%;
+            /* Mantiene la proporción de la imagen */
+            z-index: 978;
+        }
+
+        .imagen-fija-rey {
+            position: fixed;
+            /* Mantiene la imagen en una posición fija */
+            top: 40%;
+            /* Distancia desde la parte superior */
+            right: 52%;
+            /* Distancia desde la parte derecha para alinearlo más a la derecha de Finn */
+            width: 16vw;
+            /* Ancho relativo al ancho de la ventana */
+            height: 37%;
+            /* Mantiene la proporción de la imagen */
+            z-index: 968;
+        }
+
+        .imagen-fija-princesa {
+            position: fixed;
+            /* Mantiene la imagen en una posición fija */
+            top: 41%;
+            /* Distancia desde la parte superior */
+            right: 38%;
+            /* Distancia desde la parte derecha para alinearlo más a la derecha de Finn */
+            width: 7vw;
+            /* Ancho relativo al ancho de la ventana */
+            height: 45%;
+            /* Mantiene la proporción de la imagen */
+            z-index: 967;
+        }
+
+        .imagen-fija-phoebe {
+            position: fixed;
+            /* Mantiene la imagen en una posición fija */
+            top: 41%;
+            /* Distancia desde la parte superior */
+            right: 30%;
+            /* Distancia desde la parte derecha para alinearlo más a la derecha de Finn */
+            width: 8vw;
+            /* Ancho relativo al ancho de la ventana */
+            height: 45%;
+            /* Mantiene la proporción de la imagen */
+            z-index: 900;
+        }
+
+        .imagen-fija-grumosa {
+            position: fixed;
+            /* Mantiene la imagen en una posición fija */
+            top: 15%;
+            /* Distancia desde la parte superior */
+            right: 30%;
+            /* Distancia desde la parte derecha para alinearlo más a la derecha de Finn */
+            width: 8vw;
+            /* Ancho relativo al ancho de la ventana */
+            height: 20%;
+            /* Mantiene la proporción de la imagen */
+            z-index: 800;
+        }
+
+
+
 
         .container {
             display: flex;
@@ -107,6 +218,124 @@
             padding: 15px 30px;
             font-size: 16px;
             cursor: pointer;
+        }
+
+
+        .notification {
+            position: fixed;
+            width: 9vw;
+            height: 23%;
+            z-index: 1001;
+            flex-direction: column;
+            isolation: isolate;
+            width: 18rem;
+            height: 8rem;
+            background: #29292ce5;
+            border-radius: 1rem;
+            overflow: hidden;
+            font-size: 16px;
+        }
+
+        .notification-jake {
+            display: none;
+            top: 64%;
+            right: 20%;
+            --gradient: linear-gradient(to bottom, #ffb62e, #eecd12, #fbff00);
+            --color: #fbff00
+        }
+
+        .notification-bmo {
+            display: none;
+            top: 64%;
+            right: 40%;
+            --gradient: linear-gradient(to bottom, #4d79f3, #92d3ff, #4cb7ff);
+            --color: #4cb7ff
+        }
+
+        .notification:before {
+            position: absolute;
+            content: "";
+            inset: 0.0625rem;
+            border-radius: 0.9375rem;
+            background: #18181bb0;
+            z-index: 2
+        }
+
+        .notification:after {
+            position: absolute;
+            content: "";
+            width: 0.25rem;
+            inset: 0.65rem auto 0.65rem 0.5rem;
+            border-radius: 0.125rem;
+            background: var(--gradient);
+            transition: transform 300ms ease;
+            z-index: 4;
+        }
+
+        .notification:hover:after {
+            transform: translateX(0.15rem)
+        }
+
+        .notititle {
+            color: var(--color);
+            padding: 0.65rem 0.25rem 0.4rem 1.25rem;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: transform 300ms ease;
+            z-index: 5;
+        }
+
+        .notification:hover .notititle {
+            transform: translateX(0.15rem)
+        }
+
+        .notibody {
+            color: #99999d;
+            padding: 0 1.25rem;
+            transition: transform 300ms ease;
+            z-index: 5;
+        }
+
+        .notification:hover .notibody {
+            transform: translateX(0.25rem)
+        }
+
+        .notiglow,
+        .notiborderglow {
+            position: absolute;
+            width: 20rem;
+            height: 20rem;
+            transform: translate(-50%, -50%);
+            background: radial-gradient(circle closest-side at center, white, transparent);
+            opacity: 0;
+            transition: opacity 300ms ease;
+        }
+
+        .notiglow {
+            z-index: 3;
+        }
+
+        .notiborderglow {
+            z-index: 1;
+        }
+
+        .notification:hover .notiglow {
+            opacity: 0.1
+        }
+
+        .notification:hover .notiborderglow {
+            opacity: 0.1
+        }
+
+        .note {
+            color: var(--color);
+            position: fixed;
+            top: 80%;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            font-size: 0.9rem;
+            width: 75%;
         }
 
         @media (max-width: 768px) {
@@ -138,12 +367,31 @@
                 <img class="shadowfilter imagen-fija-finn" src="img/amigos/Finn.webp">
             </span>
         </a>
-        
+
     </div>
     <img class="shadowfilter imagen-fija-jake" src="img/amigos/Jake.webp">
+    <div class="notification notification-jake">
+        <div class="notiglow"></div>
+        <div class="notiborderglow"></div>
+        <div class="notititle">Jake el Perro</div>
+        <div class="notibody">Hermano de Finn. Tiene el poder de estirarse</div>
+    </div>
     <img class="shadowfilter imagen-fija-bmo" src="img/amigos/BMO.webp">
+    <div class="notification notification-bmo">
+        <div class="notiglow"></div>
+        <div class="notiborderglow"></div>
+        <div class="notititle">BMO</div>
+        <div class="notibody">Es como un hermano menos para Finn. Es una consola con un gran corazón</div>
+    </div>
     <img class="shadowfilter imagen-fija-canela" src="img/amigos/Cinnamon.webp">
     <img class="shadowfilter imagen-fija-conde" src="img/amigos/Conde.webp">
+    <img class="shadowfilter imagen-fija-lady" src="img/amigos/LadyRainicorn.webp">
+    <img class="shadowfilter imagen-fija-mentita" src="img/amigos/Peppermint_Butler.webp">
+    <img class="shadowfilter imagen-fija-marceline" src="img/amigos/Marceline.webp">
+    <img class="shadowfilter imagen-fija-rey" src="img/amigos/Ice_King.webp">
+    <img class="shadowfilter imagen-fija-princesa" src="img/amigos/DulcePrincesa.webp">
+    <img class="shadowfilter imagen-fija-phoebe" src="img/amigos/FlamePrincess.webp">
+    <img class="shadowfilter imagen-fija-grumosa" src="img/amigos/PrincesaGrumosa.webp">
 </body>
 
 </html>
