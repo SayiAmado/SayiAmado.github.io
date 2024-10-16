@@ -18,6 +18,10 @@
             background-repeat: no-repeat;
         }
 
+        h2 {
+            font-size: 85pt;
+        }
+
 
         .imagen-fija-finn {
             position: fixed;
@@ -583,28 +587,37 @@
                 background-position: 10%;
             }
 
+            h2 {
+                font-size: 35pt;
+            }
+            .friend{
+                border-top: 80px solid transparent; 
+            }
+
             #logo picture img {
                 position: fixed;
                 top: 10px;
                 right: 10px;
                 width: 60px;
                 height: auto;
-                z-index: 9000;
+                z-index: 99999;
+            }
+            .container {
+                justify-content: center;
             }
 
             .button-wrapper {
                 width: 100%;
-                position: relative;
-                justify-content: center;
+                position: fixed;
+                bottom: 0;
+                justify-content: space-around;
                 background-color: transparent;
-                padding: 10px 0;
-                margin-top: 40px;
+                padding: 10px 15%;
             }
 
             .button-wrapper button {
-                flex: none;
+                flex: 1;
                 margin: 0 10px;
-                width: 45%;
             }
 
             .imagen-fija-finn,
@@ -667,6 +680,7 @@
 </head>
 
 <body>
+
     <div id="logo" style="z-index: 10000;">
         <a href="versiones.html" title="Versiones alternas de Finn!">
             <picture>
@@ -681,6 +695,10 @@
                 <a href="index.html"><button class="Btn2" id="boton-derecho">Inicio</button></a>
             </div>
         </div>
+    </div>
+    <div class="w3-container" style="position: fixed; color: #e9f5f5;; z-index: 999999;">
+        <h2 style="-webkit-text-stroke-width: 1px; -webkit-text-stroke-color: black;">Amigos de Finn
+        </h2>
     </div>
     <img class="shadowfilter imagen-fija-jake friend" src="img/amigos/Jake.webp">
     <div class="notification notification-jake">
