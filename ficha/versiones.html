@@ -12,11 +12,13 @@
             margin: 0;
             padding: 0;
             height: 100vh;
+            background-color: #176ee2;
             background-image: url('img/pj.jpg');
             background-size: cover;
             background-position: center center;
             background-repeat: no-repeat;
         }
+
         /* Estilos para las diapositivas */
         .mySlides {
             display: none;
@@ -37,21 +39,34 @@
 
         /* Estilo para el contenedor del slideshow */
         .slideshow-container {
-            width: 75%; /* Ocupa el 75% del ancho de la ventana */
-            margin: auto; /* Centra el contenedor */
+            width: 60%;
+            /* Ocupa el 75% del ancho de la ventana */
+            margin: auto;
+            /* Centra el contenedor */
         }
 
-        /* Asegura que las imágenes se ajusten al contenedor */
+        /* Asegura que las imágenes se ajusten al 60% del alto de la pantalla y mantengan la proporción */
         .slideshow-container img {
-            width: 100%;
-            height: auto;
+            height: 60vh;
+            /* 60% del alto de la pantalla */
+            width: auto;
+            /* Ajuste proporcional del ancho */
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        /* Estilo para los indicadores (miniaturas) */
-        .indicators img {
-            width: 100%;
-            height: auto;
+        .w3-row-padding {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
         }
+
+        .w3-row-padding .w3-col {
+            flex: 0 0 25%;
+            max-width: 25%;
+        }
+
         .container {
             display: flex;
             justify-content: center;
@@ -63,9 +78,9 @@
 
         .button-wrapper {
             display: flex;
-            width: 50%;
+            width: 40%;
             /* Ajusta el ancho según sea necesario */
-            justify-content: space-between;
+            justify-content: center;
             /* Espacio entre los botones */
             z-index: 10;
         }
@@ -75,6 +90,7 @@
             font-size: 16px;
             cursor: pointer;
         }
+
         /* Btn1 */
         .Btn {
             position: relative;
@@ -85,8 +101,8 @@
             background-color: rgb(228, 248, 140);
             color: rgb(0, 0, 0);
             box-shadow: 0px 10px 10px rgb(189, 170, 0) inset,
-                0px 5px 10px rgba(5, 5, 5, 0.212),
-                0px -10px 10px rgb(187, 190, 3) inset;
+                        0px 5px 10px rgba(5, 5, 5, 0.212),
+                        0px -10px 10px rgb(187, 190, 3) inset;
             cursor: pointer;
             display: flex;
             align-items: center;
@@ -129,8 +145,8 @@
             background-color: rgb(194, 162, 196);
             color: rgb(255, 255, 255);
             box-shadow: 0px 10px 10px rgb(224, 124, 224) inset,
-                0px 5px 10px rgba(5, 5, 5, 0.212),
-                0px -10px 10px rgb(162, 2, 177) inset;
+                        0px 5px 10px rgba(5, 5, 5, 0.212),
+                        0px -10px 10px rgb(162, 2, 177) inset;
             cursor: pointer;
             display: flex;
             align-items: center;
@@ -173,13 +189,12 @@
             background-color: rgb(0, 216, 187);
             color: rgb(255, 255, 255);
             box-shadow: 0px 10px 10px rgb(0, 201, 151) inset,
-                0px 5px 10px rgba(5, 5, 5, 0.212),
-                0px -10px 10px rgb(0, 111, 214) inset;
+                        0px 5px 10px rgba(5, 5, 5, 0.212),
+                        0px -10px 10px rgb(0, 111, 214) inset;
             cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
-
         }
 
         .Btn3::before {
@@ -237,160 +252,143 @@
                 transform: scale3d(1, 1, 1);
             }
         }
-
-        @media (max-width: 768px) {
-            .container {
-                justify-content: center;
-            }
-
-            .button-wrapper {
-                width: 100%;
-                position: fixed;
-                bottom: 0;
-                justify-content: space-around;
-                background-color: transparent;
-                padding: 7px 0;
-            }
-
-            .button-wrapper button {
-                flex: 1;
-                margin: 0 2%;
-            }
-        }
     </style>
 </head>
+
 <body>
 
-<div class="w3-container">
     <div class="w3-container">
-        <h2>Versiones alternas de Finn</h2>
-        <p>En la serie, se han visto multiples versiones del personaje, algunos representan transformaciones, posibles
-            futuros y otras versiones de universos alternos.</p>
+        <div class="w3-container">
+            <h2>Versiones alternas de Finn</h2>
+            <p>En la serie, se han visto multiples versiones del personaje, algunos representan transformaciones,
+                posibles
+                futuros y otras versiones de universos alternos.</p>
+        </div>
+        <div class="w3-content w3-display-container slideshow-container">
+            <div class="mySlides w3-display-container">
+                <img src="img\versiones\Fionna.png" style="width:80px">
+                <div class="w3-display-bottomleft w3-large w3-container w3-padding-16 w3-black">
+                    Fionna
+                </div>
+            </div>
+
+            <div class="mySlides w3-display-container">
+                <img src="img\versiones\Davey.png" style="width:100%">
+                <div class="w3-display-bottomleft w3-large w3-container w3-padding-16 w3-black">
+                    Davey
+                </div>
+            </div>
+
+            <div class="mySlides w3-display-container">
+                <img src="img\versiones\Finn Gato.png" style="width:100%">
+                <div class="w3-display-bottomleft w3-large w3-container w3-padding-16 w3-black">
+                    Finn Gato
+                </div>
+            </div>
+            <div class="mySlides w3-display-container">
+                <img src="img\versiones\FinnAlmohada.png" style="width:100%">
+                <div class="w3-display-bottomleft w3-large w3-container w3-padding-16 w3-black">
+                    Finn Almohada
+                </div>
+            </div>
+
+            <div class="mySlides w3-display-container">
+                <img src="img\versiones\FinnGrumoso.png" style="width:100%">
+                <div class="w3-display-bottomleft w3-large w3-container w3-padding-16 w3-black">
+                    Finn Grumoso
+                </div>
+            </div>
+
+            <div class="mySlides w3-display-container">
+                <img src="img\versiones\FlameFinn.png" style="width:100%">
+                <div class="w3-display-bottomleft w3-large w3-container w3-padding-16 w3-black">
+                    Finn Flama
+                </div>
+            </div>
+            <div class="mySlides w3-display-container">
+                <img src="img\versiones\LoboApapacho.png" style="width:100%">
+                <div class="w3-display-bottomleft w3-large w3-container w3-padding-16 w3-black">
+                    Finn Lobo Apapacho
+                </div>
+            </div>
+
+            <div class="mySlides w3-display-container">
+                <img src="img\versiones\Puno_magico.png" style="width:100%">
+                <div class="w3-display-bottomleft w3-large w3-container w3-padding-16 w3-black">
+                    Puño Magico
+                </div>
+            </div>
+
+            <a class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</a>
+            <a class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</a>
+
+        </div>
+
+        <div class="w3-row-padding w3-section">
+            <div class="w3-col s4">
+                <img class="w3-badge demo" src="img\versiones\Fionna.png" onclick="currentDiv(1)">
+            </div>
+            <div class="w3-col s4">
+                <img class="w3-badge demo" src="img\versiones\Davey.png" onclick="currentDiv(2)">
+            </div>
+            <div class="w3-col s4">
+                <img class="w3-badge demo" src="img\versiones\Finn Gato.png" onclick="currentDiv(3)">
+            </div>
+            <div class="w3-col s4">
+                <img class="w3-badge demo" src="img\versiones\FinnAlmohada.png" onclick="currentDiv(4)">
+            </div>
+            <div class="w3-col s4">
+                <img class="w3-badge demo" src="img\versiones\FinnGrumoso.png" onclick="currentDiv(5)">
+            </div>
+            <div class="w3-col s4">
+                <img class="w3-badge demo" src="img\versiones\FlameFinn.png" onclick="currentDiv(6)">
+            </div>
+            <div class="w3-col s4">
+                <img class="w3-badge demo" src="img\versiones\LoboApapacho.png" onclick="currentDiv(7)">
+            </div>
+            <div class="w3-col s4">
+                <img class="w3-badge demo" src="img\versiones\Puno_magico.png" onclick="currentDiv(8)">
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="button-wrapper">
+                <a href="finn.html"><button class="Btn" id="boton-izquierdo"><b>Ficha</b></button></a>
+                <a href="index.html"><button class="Btn3" id="boton-izquierdo"><b>Inicio</b></button></a>
+                <a href="amigos.html"><button class="Btn2" id="boton-derecho">Amigos</button></a>
+            </div>
+        </div>
     </div>
-    <div class="w3-content w3-display-container slideshow-container">
-        <div class="mySlides w3-display-container">
-            <img src="img\versiones\Fionna.png" style="width:100%">
-            <div class="w3-display-bottomleft w3-large w3-container w3-padding-16 w3-black">
-                Fionna
-            </div>
-        </div>
 
-        <div class="mySlides w3-display-container">
-            <img src="img\versiones\Davey.png" style="width:100%">
-            <div class="w3-display-bottomleft w3-large w3-container w3-padding-16 w3-black">
-                Davey
-            </div>
-        </div>
+    <script>
+        var slideIndex = 1;
+        showDivs(slideIndex);
 
-        <div class="mySlides w3-display-container">
-            <img src="img\versiones\Finn Gato.png" style="width:100%">
-            <div class="w3-display-bottomleft w3-large w3-container w3-padding-16 w3-black">
-                Finn Gato
-            </div>
-        </div>
-        <div class="mySlides w3-display-container">
-            <img src="img\versiones\FinnAlmohada.png" style="width:100%">
-            <div class="w3-display-bottomleft w3-large w3-container w3-padding-16 w3-black">
-                Finn Almohada
-            </div>
-        </div>
-
-        <div class="mySlides w3-display-container">
-            <img src="img\versiones\FinnGrumoso.png" style="width:100%">
-            <div class="w3-display-bottomleft w3-large w3-container w3-padding-16 w3-black">
-                Finn Grumoso
-            </div>
-        </div>
-
-        <div class="mySlides w3-display-container">
-            <img src="img\versiones\FlameFinn.png" style="width:100%">
-            <div class="w3-display-bottomleft w3-large w3-container w3-padding-16 w3-black">
-                Finn Flama
-            </div>
-        </div>
-        <div class="mySlides w3-display-container">
-            <img src="img\versiones\LoboApapacho.png" style="width:100%">
-            <div class="w3-display-bottomleft w3-large w3-container w3-padding-16 w3-black">
-                Finn Lobo Apapacho
-            </div>
-        </div>
-
-        <div class="mySlides w3-display-container">
-            <img src="img\versiones\Puno_magico.png" style="width:100%">
-            <div class="w3-display-bottomleft w3-large w3-container w3-padding-16 w3-black">
-                Puño Magico
-            </div>
-        </div>
-        
-        <a class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</a>
-        <a class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</a>
-
-    </div>
-
-    <div class="w3-row-padding w3-section">
-        <div class="w3-col s4">
-            <img class="w3-badge demo" src="img\versiones\Fionna.png" onclick="currentDiv(1)">
-        </div>
-        <div class="w3-col s4">
-            <img class="w3-badge demo" src="img\versiones\Davey.png" onclick="currentDiv(2)">
-        </div>
-        <div class="w3-col s4">
-            <img class="w3-badge demo" src="img\versiones\Finn Gato.png" onclick="currentDiv(3)">
-        </div>
-        <div class="w3-col s4">
-            <img class="w3-badge demo" src="img\versiones\FinnAlmohada.png" onclick="currentDiv(4)">
-        </div>
-        <div class="w3-col s4">
-            <img class="w3-badge demo" src="img\versiones\FinnGrumoso.png" onclick="currentDiv(5)">
-        </div>
-        <div class="w3-col s4">
-            <img class="w3-badge demo" src="img\versiones\FlameFinn.png" onclick="currentDiv(6)">
-        </div>
-        <div class="w3-col s4">
-            <img class="w3-badge demo" src="img\versiones\LoboApapacho.png" onclick="currentDiv(7)">
-        </div>
-        <div class="w3-col s4">
-            <img class="w3-badge demo" src="img\versiones\Puno_magico.png" onclick="currentDiv(8)">
-        </div>
-    </div>
-
-    <div class="container">
-        <div class="button-wrapper">
-            <a href="finn.html"><button class="Btn" id="boton-izquierdo"><b>Ficha</b></button></a>
-            <a href="index.html"><button class="Btn3" id="boton-izquierdo"><b>Inicio</b></button></a>
-            <a href="amigos.html"><button class="Btn2" id="boton-derecho">Amigos</button></a>
-        </div>
-    </div>
-</div>
-
-<script>
-    var slideIndex = 1;
-    showDivs(slideIndex);
-
-    function plusDivs(n) {
-        showDivs(slideIndex += n);
-    }
-
-    function currentDiv(n) {
-        showDivs(slideIndex = n);
-    }
-
-    function showDivs(n) {
-        var i;
-        var x = document.getElementsByClassName("mySlides");
-        var dots = document.getElementsByClassName("demo");
-        if (n > x.length) {slideIndex = 1}
-        if (n < 1) {slideIndex = x.length}
-        for (i = 0; i < x.length; i++) {
-            x[i].style.display = "none";
+        function plusDivs(n) {
+            showDivs(slideIndex += n);
         }
-        for (i = 0; i < dots.length; i++) {
-            dots[i].className = dots[i].className.replace(" w3-opacity-off", "");
+
+        function currentDiv(n) {
+            showDivs(slideIndex = n);
         }
-        x[slideIndex-1].style.display = "block";
-        dots[slideIndex-1].className += " w3-opacity-off";
-    }
-</script>
+
+        function showDivs(n) {
+            var i;
+            var x = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("demo");
+            if (n > x.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = x.length }
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" w3-opacity-off", "");
+            }
+            x[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " w3-opacity-off";
+        }
+    </script>
 
 </body>
+
 </html>
