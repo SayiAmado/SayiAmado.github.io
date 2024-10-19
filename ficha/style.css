@@ -17,6 +17,9 @@ h5 {
 h1 {
     font-size: 85pt;
 }
+#header h1 {
+    display: inline;
+}
 
 .context {
     width: 100%;
@@ -242,6 +245,26 @@ button {
             filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.8));
 }
 
+div.art {
+    width: 40%;
+}
+.powerToughness {
+    width: 7em;
+    top: -490px;
+    right: 0;
+    text-align: center;
+    float: right;
+    z-index: 10000;
+}
+
+.powerToughness div {
+    padding: 6px 1 0;
+    height: 40px;
+    box-shadow: none -2px 2px 1px #333, inset 1px -1px 0 #fff;
+    border: 0 #000;
+    font-size: 21px;
+    z-index: 10000;
+}
 @media (max-width: 600px) {
 
 
@@ -309,7 +332,7 @@ button {
     }
 
     div.art {
-        width: 70%;
+        width: 90%;
         margin: 0 auto;
         top: -480px;
     }
