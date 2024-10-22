@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Exo:400,700');
 
-/*fICHA*/
 * {
     margin: 0px;
     padding: 0px;
@@ -473,8 +472,6 @@ div.art {
         margin-bottom: 0;
     }
 
-
-    /*HOME*/
     #logo {
         margin: 0 35% 0 35%;
         width: 30%;
@@ -483,15 +480,10 @@ div.art {
 
     #logo img {
         position: fixed;
-        /* Mantiene la imagen en una posición fija */
         top: 47%;
-        /* Distancia desde la parte superior */
         right: 30%;
-        /* Distancia desde la parte derecha */
         width: 32vw;
-        /* Ancho relativo al ancho de la ventana */
         height: 40%;
-        /* Mantiene la proporción de la imagen */
         z-index: 1000;
     }
 
