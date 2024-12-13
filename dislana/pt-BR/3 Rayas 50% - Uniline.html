@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>3 Rayas 50% - Uniline</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body, h2, h3, h4, h5, h6 {
+            font-family: "Raleway", sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            font-family: Space-Age
+        }
+        @font-face { font-family: Space-Age; src: url('font/space\ age.ttf'); } 
+        body, html {
+            height: 100%;
+            line-height: 1.4;
+            background-color: #000000;
+            overflow-x: hidden;
+        }
+        .w3-bar .w3-button {
+            padding: 25px 30px;
+            transition: color 0.3s;
+            background-color: transparent !important;
+        }
+        .w3-bar a:hover, .w3-bar a:focus {
+            color: rgb(0, 195, 255) !important;
+        }
+        
+        .w3-top {
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        img {
+            height: auto;
+            object-fit: contain;
+        }
+
+        .content-container {
+            min-height: calc(100vh - 70px);
+            position: relative;
+        }
+        
+        .social-button {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            width: 45px;
+            height: 45px;
+            background-color: transparent;
+            border: 2px solid white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .social-button a {
+            color: white;
+            text-decoration: none;
+            font-size: 24px;
+        }
+        .social-button a {
+            color: white;
+            text-decoration: none;
+            font-size: 24px;
+        }
+
+        .social-button.whatsapp:hover {
+            background-color: #25D366;
+        }
+        .social-button.instagram:hover {
+            background-color: #e60b54;
+        }
+        .social-button.facebook:hover {
+            background-color: #2bbde9;
+        }
+
+        .social-button.tiktok:hover {
+            background-color: #ffffff;
+        }
+        .social-button.instagram {
+            bottom: 68px;
+            transform: translateX(-100px);
+            opacity: 0;
+        }
+        .social-button.facebook {
+            bottom: 118px;
+            transform: translateX(-100px);
+            opacity: 0;
+        }
+        .social-button.tiktok {
+            bottom: 168px;
+            transform: translateX(-100px);
+            opacity: 0;
+        }
+        .social-buttons-container:hover .social-button.instagram,
+        .social-buttons-container:hover .social-button.facebook,
+        .social-buttons-container:hover .social-button.tiktok  {
+            transform: translateX(0);
+            opacity: 1;
+        }
+        .social-buttons-container {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            z-index: 999;
+        }
+        .banderas{
+            position: absolute; 
+            top: 90px; 
+            left: 15%;
+            z-index: 9999;
+            transform: translate(0%, -50%);
+        }
+
+        @media (max-width: 600px) {
+            .w3-right {
+                display: none;
+            }
+            .w3-dropdown-hover .w3-button.dropdown-button {
+                padding: 8px 16px !important;
+            }
+            .w3-dropdown-content {
+                position: relative;
+                width: 100%;
+            }
+            .w3-bar .w3-bar-item {
+                display: block;
+                width: 100%;
+                text-align: left;
+                padding: 8px 16px;
+            }
+        }
+
+        .contact-details {
+            text-align: left;
+        }
+
+        .background-section {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            background-image: url('IMAGENES/FONDOUNILINE.PNG'); /* Añade aquí la URL de tu imagen de fondo */
+            background-size: cover;
+            background-position: center;
+        }
+
+        .text {
+            text-align: left;
+            padding: 20px;
+            width: 50%;
+            order: 2;
+        }
+
+        .image-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .large-image-container {
+            width: 24%;
+            max-width: 500px;
+            margin-left:-550px; /* Ajusta el margen a tu preferencia */
+            position: relative;
+        }
+
+        .large-image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 20px;
+            z-index: 1;
+        }
+
+        .nav-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 24px;
+            z-index: 3;
+        }
+
+        .left-btn,
+            .right-btn {
+                background-color: transparent; /* Elimina el fondo negro */
+                color: white;
+                border: none;
+                padding: 2px;
+                cursor: pointer;
+                font-size: 24px;
+                z-index: 3;
+            }
+
+        .left-btn {
+            left: 20px; /* Ajusta la posición a tu preferencia */
+        }
+
+        .right-btn {
+            right: 20px; /* Ajusta la posición a tu preferencia */
+        }
+
+        .nav-btn:hover {
+            color: rgba(0, 0, 0, 0.8);
+        }
+
+        .info-container {
+            position: absolute;
+            top: 25%; /* Ajusta la posición vertical */
+            left: 55%; /* Ajusta la posición horizontal */
+            width: 30%;
+            text-align: left;
+        }
+
+        @media (max-width: 768px) {
+        .background-section {
+            bottom: 120px;
+        }
+        .banderas{
+            position: relative; 
+            top: 5%; 
+            margin-top: 100px;
+            margin-left: -30px;
+            z-index: 999;
+        }
+        .img-bandera{
+            width: 30px;
+        }
+        .large-image-container {
+            width: 60%;
+            margin: 0 auto; /* Centra el contenedor */
+            transform: translateY(-250px); /* Ajusta la posición vertical */
+        }
+
+        .large-image-container img {
+            width: 100%;
+            height: auto;
+        }
+
+        .info-container {
+            width: 90%; /* Ajusta el ancho en dispositivos móviles */
+            left: 10%; /* Ajusta la posición horizontal */
+            top: 35%; /* Ajusta la posición vertical */
+            order: 2; /* Cambiado para que se posicione después de la imagen */
+        }
+    }
+        .info-container h1 {
+            font-size: 50px;
+            font-weight: 1000; /* Aumenta el peso de la fuente */
+            color: white;
+        }
+
+        .info-container p {
+            font-size: 18px;
+            color: white;
+        }
+
+        .color-boxes {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .color-box {
+            width: 40px;
+            height: 40px;
+            border-radius: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: transparent;
+            transition: color 0.3s;
+            overflow: hidden;
+            position: relative;
+        }
+        .color-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .color-box span {
+            position: absolute;
+            z-index: 2;
+        }
+
+        .color-box:hover {
+            color: white;
+        }
+
+        .color-box.ficha-tecnica-btn {
+            width: 150px;
+            height: 50px;
+            border-radius: 25px;
+            background-color: transparent;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: rgb(0, 0, 0);
+            background-color: rgb(174, 237, 255);
+            font-size: 16px;
+            transition: background-color 0.3s, color 0.3s;
+            cursor: pointer;
+            margin-top: 90px;
+            margin-left: -230px; /* Ajusta la distancia a la izquierda */
+        }
+
+        .color-box.ficha-tecnica-btn:hover {
+            background-color: rgba(0, 141, 184, 0.644);
+            color: rgb(255, 255, 255);
+        }
+        .terms-conditions {
+            margin-top: 60px;
+            margin-left: -200px; /* Ajusta la distancia a la izquierda */
+        }
+    </style>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+    <div class="w3-bar w3-black w3-card" id="navbar">
+        <a href="index.html" class="w3-bar-item w3-button w3-padding-large">UNILINE</a>
+        <a href="Contenido - Uniline.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">CONTEÚDO</a>
+        <a href="http://ecommerce.dislana.com/dist/Dislana/#/" class="w3-bar-item w3-button w3-padding-large w3-hide-small">E-COMMERCE</a>
+        <a href="javascript:void(0);" class="w3-bar-item w3-button w3-padding-large w3-right w3-hide-large w3-hide-medium" onclick="toggleNavbar()">&#9776;</a>
+    </div>
+       <!-- Menu lateral -->
+       <div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
+        <a href="Contenido - Uniline.html" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">CONTEÚDO</a>
+        <a href="http://ecommerce.dislana.com/dist/Dislana/#/" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">E-COMMERCE</a>
+    </div>
+</div>
+<!-- Contenedor principal -->
+<div class="content-container" style="padding-bottom: 0; margin-bottom: 0">
+<!-- Boton banderas -->
+    <div class="banderas">
+        <div style=" border-top: 0.5px solid transparent; margin-top: 20px;"></div>
+        <a href="C:\Users\Ventas1041\Desktop\Uniline.billiard\es-ES\3 Rayas 50% - Uniline.html">
+            <button type="button" style="background-color: transparent; border-color: transparent; cursor: pointer;">
+				<img src="IMAGENES/colombia.png" class="img-bandera"/>
+			</button>
+		</a>
+                <img src="IMAGENES/brazil.png" class="img-bandera"/>
+                </div>
+    <div class="background-section" style="padding-bottom: 0; margin-bottom: 0">
+        <div class="large-image-container">
+            <button class="nav-btn left-btn" onclick="prevImage()">&#10094;</button>
+            <img id="galleryImage" src="IMAGENES/PRESENTACION/SPORTS POOL/3RAYAS50.jpeg" alt="Gallery Image">
+            <button class="nav-btn right-btn" onclick="nextImage()">&#10095;</button>
+        </div>
+        <div class="info-container">
+            <h1>3 RAYAS 50 %<sup>®</sup></h1>
+            <p><strong>( Sport Pool )</strong></p>
+            <p>Acrílico-Poliéster Sintético. Desenvolvido exclusivamente para o jogo de sinuca, é atualmente um dos cortes mais reconhecidos pela sua dureza e comportamento eficaz no jogo. Muito utilizado por empresas que alugam mesas de sinuca e salas de bilhar.</p>
+            <p><strong>CORES DISPONÍVEIS:</strong></p>
+            <div class="color-boxes">
+                <div class="color-box" >
+                    <img src="IMAGENES/COLORES/001.jpg" alt="Red Box">
+                    <span>001</span>
+                </div>
+                <div class="color-box" >
+                    <img src="IMAGENES/COLORES/002.jpg" alt="Red Box">
+                    <span>002</span>
+                </div>
+                <div class="color-box" >
+                    <img src="IMAGENES/COLORES/003.jpg" alt="Red Box">
+                    <span>003</span>
+                </div>
+                <div class="color-box" >
+                    <img src="IMAGENES/COLORES/004.jpg" alt="Red Box">
+                    <span>004</span>
+                </div>
+                <div class="color-box" >
+                    <img src="IMAGENES/COLORES/005.jpg" alt="Red Box">
+                    <span>005</span>
+                </div>
+                <div class="color-box" >
+                    <img src="IMAGENES/COLORES/006.jpg" alt="Red Box">
+                    <span>006</span>
+                </div>
+                <div class="color-box" >
+                    <img src="IMAGENES/COLORES/008.jpg" alt="Red Box">
+                    <span>008</span>
+                </div>
+            </div>
+            <p><strong>EM DRY :</strong></p>
+            <div class="color-boxes">
+                <div class="color-box">
+                    <img src="IMAGENES/COLORES/001.jpg" alt="Red Box">
+                    <span>001</span>
+                </div>
+                <div class="color-box">
+                    <img src="IMAGENES/COLORES/002.jpg" alt="Red Box">
+                    <span>002</span>
+                </div>
+                <div class="color-box">
+                    <img src="IMAGENES/COLORES/004.jpg" alt="Red Box">
+                    <span>004</span>
+                </div>
+                <div class="color-box">
+                    <img src="IMAGENES/COLORES/005.jpg" alt="Red Box">
+                    <span>005</span>
+                </div>
+                <div><p class="terms-conditions">APLICAM-SE RESTRIÇÕES</p></div>
+                <div class="color-box ficha-tecnica-btn">FICHA TÉCNICA</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Botones sociales -->
+  <!-- Social Buttons -->
+  <div class="social-buttons-container">
+    <div class="social-button whatsapp"><a href="https://api.whatsapp.com/send/?phone=573202816007&text=Hola&type=phone_number&app_absent=0"><i class="fa fa-whatsapp"></i></a></div>
+    <div class="social-button instagram"><a href="https://www.instagram.com/unilinebilliard/"><i class="fa fa-instagram"></i></a></div>
+    <div class="social-button facebook"><a href="https://www.facebook.com/unilinebilliard"><i class="fa fa-facebook"></i></a></div>
+    <div class="social-button tiktok">
+        <a href="https://www.tiktok.com/@uniline.tv" target="_blank">
+            <img src="IMAGENES/LOGOS/Tiktok.png" alt="TikTok Logo" style="width: 50px; height: 28px;">
+        </a>
+    </div>
+</div>
+
+<!-- Footer -->
+
+<footer class="footer-distributed">
+
+    <div class="footer-left">
+
+        <h3><img src="IMAGENES/LOGOS/Logo_UNILINE_Blanco2.png" alt="Image 9" width="50%"></h3>
+        <p class="footer-links">
+            <a href="https://www.uniline.com.co/garantia-efectiva/">Garantia Efetiva</a>
+            <a href="Termos.bilhar.html">Termos e Condições</a>
+        <p class="footer-company-name">Dislana© 2024</p>
+    </div>
+    <div class="footer-center">
+        <div>
+            <i class="fa fa-map-marker"></i>
+            <p><span>Cl. 9 #41 a 16</span> Bogotá, Colombia</p>
+        </div>
+        <div>
+            <i class="fa fa-phone"></i>
+            <p>+57 312 4578522</p>
+        </div>
+
+        <div>
+            <i class="fa fa-envelope"></i>
+            <p><a href="mailto:ventas@dislana.com">ventas@dislana.com</a></p>
+        </div>
+
+    </div>
+
+    <div class="footer-right">
+        <p class="footer-company-about">
+            <span>SOBRE UNILINE</span>
+            A UNILINE apoia as melhores marcas de panos de bilhar a nível Profissional, Desportivo-Recreativo e 
+            Decorativo, proporcionando a melhor qualidade e precisão.
+        </p>
+    </div>
+</footer>
+
+<script>// cambio de color correo y numero de telefono
+    function changeColor(elementId) {
+        document.getElementById(elementId).style.color = "blue";
+    }
+
+    function restoreColor(elementId) {
+        document.getElementById(elementId).style.color = "white";
+    }
+    function toggleNavbar() {
+        var x = document.getElementById("navDemo");
+        if (x.className.indexOf("w3-show") === -1) {
+            x.className += " w3-show";
+        } else {
+            x.className = x.className.replace(" w3-show", "");
+        }
+    }
+
+    let currentImageIndex = 0;
+    const images = [
+        "IMAGENES/PRESENTACION/SPORTS POOL/3RAYAS50.jpeg",
+        "IMAGENES/PRESENTACION/SPORTS POOL/3RAYAS.jpg"
+    ];
+
+    function showImage(index) {
+        const galleryImage = document.getElementById("galleryImage");
+        galleryImage.src = images[index];
+    }
+
+    function prevImage() {
+        currentImageIndex = (currentImageIndex > 0) ? currentImageIndex - 1 : images.length - 1;
+        showImage(currentImageIndex);
+    }
+
+    function nextImage() {
+        currentImageIndex = (currentImageIndex < images.length - 1) ? currentImageIndex + 1 : 0;
+        showImage(currentImageIndex);
+    }
+
+    // Función para cambiar automáticamente las imágenes cada 5 segundos
+    setInterval(function() {
+        nextImage();
+    }, 3000); // Cambia las imágenes cada 5 segundos (5000 milisegundos)
+</script>
+
+
+</body>
+</html>

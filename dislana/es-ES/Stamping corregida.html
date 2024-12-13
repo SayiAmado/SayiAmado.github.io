@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Stamping - School Line - Uniline.us</title>
+    <!-- Aquí van tus metadatos, estilos y enlaces a scripts -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <style>
+            body,
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6 {
+                font-family: "Raleway", sans-serif;
+            }
+
+            body,
+            html {
+                height: 100%;
+                line-height: 1.4;
+                margin: 0;
+                padding: 0;
+                background-color: #ffffff;
+                /* Color de fondo */
+                overflow-x: hidden;
+                /* Oculta la barra de desplazamiento horizontal */
+            }
+
+            /*BARRA DE NAVEGACION*/
+            .w3-bar .w3-button {
+                padding: 30px;
+            }
+
+            img {
+                width: 100%;
+                height: auto;
+                /* Ajusta la altura según sea necesario */
+                object-fit: cover;
+            }
+
+            @media (max-width: 768px) {
+                img.imagen {
+                    height: 60vh;
+                    /* Reducir la altura en pantallas pequeñas */
+                    max-height: calc(100vh - 70px);
+                    /* Asegura que la imagen no se extienda más allá de la altura de la pantalla */
+                }
+            }
+
+            @media (max-width: 600px) {
+                img.imagen {
+                    height: 50vh;
+                    /* Reducir aún más la altura para pantallas más pequeñas */
+                }
+            }
+
+            /* Estilo para el contenedor principal del contenido de la página */
+            .content-container {
+                min-height: calc(100vh - 70px);
+                /* Ajusta la altura del contenido para dejar espacio para la barra de navegación */
+                position: relative;
+                /* Asegura que los elementos absolutos estén posicionados relativamente a este contenedor */
+            }
+
+            /* Estilo para el footer */
+            footer {
+                position: relative;
+                /* Asegura que los elementos absolutos estén posicionados relativamente al footer */
+                padding-left: 100px;
+                /* Ajusta el padding izquierdo para dejar espacio para la imagen */
+                padding-right: 100px;
+                /* Ajusta el padding derecho para dejar espacio para la imagen */
+                height: 180px;
+                /* Ajusta la altura del footer según sea necesario */
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            footer p {
+                margin-top: -5px;
+                /* Puedes ajustar este valor según sea necesario para mover el texto hacia abajo */
+            }
+
+            .footer-links {
+                display: flex;
+            }
+
+            .footer-links div {
+                margin-left: 200px;
+            }
+
+            .footer-image {
+                /* Estilo para la imagen en la esquina inferior izquierda del footer */
+                position: absolute;
+                top: 50px;
+                /* Ajusta la distancia desde abajo */
+                left: 20px;
+                /* Ajusta la distancia desde la izquierda */
+                width: 180px;
+                height: auto;
+                z-index: 1000;
+                /* Asegura que esté por encima de todo el contenido */
+            }
+
+            @media (max-width: 768px) {
+                footer {
+                    padding-left: 20px;
+                    padding-right: 20px;
+                    height: auto;
+                    flex-direction: column;
+                    align-items: flex-start;
+                }
+
+                .footer-links {
+                    flex-direction: column;
+                    align-items: flex-start;
+                    margin-bottom: 20px;
+                    /* Añade espacio debajo de los enlaces en pantallas pequeñas */
+                }
+
+                .footer-links div {
+                    margin-left: 0;
+                    margin-bottom: 20px;
+                }
+
+                .footer-image {
+                    position: relative;
+                    top: 0;
+                    left: 0;
+                    width: 100px;
+                    /* Ajusta el tamaño de la imagen para pantallas pequeñas */
+                    margin-top: 0;
+                    /* Elimina el margen superior */
+                    z-index: 1;
+                    margin-bottom: 20px;
+                    /* Añade espacio entre la imagen y el texto en pantallas pequeñas */
+                }
+
+                .contact-details {
+                    text-align: left;
+                    /* Alinea el texto a la izquierda en pantallas pequeñas */
+                    width: 100%;
+                    /* Asegura que el contenedor ocupe todo el ancho disponible */
+                }
+            }
+
+            @media (min-width: 769px) {
+                .footer-content {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: flex-start;
+                }
+
+                .about-uniline {
+                    flex: 1;
+                }
+
+                .contact-details {
+                    text-align: left;
+                    /* Alinea el texto a la derecha en pantallas grandes */
+                }
+            }
+
+            @media (min-width: 769px) {
+                .footer-image {
+                    left: 300px;
+                    /* Ajusta la posición hacia la derecha en pantallas grandes */
+                }
+            }
+
+            /* Estilo para los iconos sociales dentro del footer */
+            .social-icons i {
+                margin-left: 40px;
+                /* Distancia entre los iconos */
+                cursor: pointer;
+                font-size: 25px;
+                /* Tamaño de fuente de los iconos más grande */
+            }
+
+            /* Estilo para el botón fijo de WhatsApp */
+            .whatsapp-button {
+                position: fixed;
+                bottom: 20px;
+                left: 20px;
+                background-color: #25D366;
+                /* Color de fondo de WhatsApp */
+                border-radius: 25px;
+                /* Bordes redondeados */
+                padding: 10px 20px;
+                /* Padding horizontal y vertical */
+                z-index: 999;
+                /* Asegura que esté por encima de otros elementos */
+                box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+                /* Sombreado exterior */
+            }
+
+            /* Estilo para el texto dentro del botón de WhatsApp */
+            .whatsapp-button a {
+                color: #fff;
+                /* Color del texto */
+                text-decoration: none;
+                /* Sin subrayado */
+                font-size: 16px;
+                /* Tamaño del texto */
+            }
+
+            img:hover {
+                cursor: pointer;
+            }
+
+            .w3-button.w3-hover-grey {
+                background-color: transparent !important;
+                /* Elimina el fondo gris */
+                position: relative;
+                transition: 0.3s;
+                box-shadow: none;
+                /* Elimina cualquier sombra por defecto */
+            }
+
+            /*media para el menu en pantallas pequeñas*/
+
+            @media (max-width: 600px) {
+                .w3-right {
+                    display: none;
+                }
+
+                .w3-dropdown-hover .w3-button.dropdown-button {
+                    padding: 8px 16px !important;
+                }
+
+                .w3-dropdown-content {
+                    position: relative;
+                    width: 100%;
+                }
+
+                .w3-bar .w3-bar-item {
+                    display: block;
+                    width: 100%;
+                    text-align: left;
+                    padding: 8px 16px;
+                }
+            }
+
+            .w3-button.w3-hover-grey:hover {
+                background-color: transparent;
+                /* Mantén el fondo transparente */
+                box-shadow: 0px 4px 8px rgba(0, 0, 255, 0.3);
+                /* Añade un sombreado azul al pasar el mouse */
+            }
+
+            /* Estilos para los elementos dentro del cuadro con sombreado */
+            .contenedor {
+                position: relative;
+                display: inline-block;
+            }
+
+            .boton {
+                /* boton de contactar */
+                position: absolute;
+                top: 11%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                padding: 10px 30px;
+                /* Aumenta el padding horizontal */
+                background-color: rgb(0, 110, 255);
+                /* Fondo completamente sólido */
+                border: none;
+                border-radius: 10px;
+                /* Bordes redondeados */
+                cursor: pointer;
+                font-size: 16px;
+            }
+
+            /*estilos para el texto encima de la imagen en caracteristicas/prohibiones ...*/
+            .overlay {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                height: 100%;
+                width: 100%;
+                opacity: 0;
+                transition: .5s ease;
+                background-color: rgba(0, 0, 0, 0.5);
+            }
+
+            .contenedor:hover .overlay {
+                opacity: 1;
+            }
+
+            /*Texto que esta encima de la imagen */
+            .text {
+                color: white;
+                font-size: 19px;
+                font-weight: bold;
+                position: absolute;
+                top: 25%;
+                left: 10%;
+                transform: translateY(-50%, -50%);
+                -ms-transform: translateY(-50%, -50%);
+                text-align: left;
+            }
+
+            .contenedor {
+                display: inline-block;
+                margin-right: 20px;
+            }
+
+            .img-common {
+                width: 150px;
+                height: auto;
+            }
+
+            .imagen:hover {
+                cursor: default;
+                /* Cambia el cursor de mano a su valor predeterminado */
+            }
+
+            /* Ajuste específico para pantallas grandes */
+            @media (min-width: 769px) {
+                .footer-content {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                }
+
+                .contact-details {
+                    text-align: left;
+                    /* Alineación a la derecha en pantallas grandes texto CONTACT*/
+                }
+            }
+            i {
+			color: rgb(225, 225, 235);
+		}
+	
+		.arrow1 {
+			animation: slide1 1s ease-in-out infinite;
+		}
+	
+		@keyframes slide1 {
+			0%,
+			100% {
+				transform: translate(0, 0);
+			}
+	
+			50% {
+				transform: translate(10px, 0);
+			}
+		}
+        </style>
+</head>
+
+<body>
+    <!-- Barra de navegación -->
+        <div class="w3-top">
+            <div class="w3-bar w3-white w3-card" id="myNavbar"><a href="Uniline.us.html"
+                    class="w3-bar-item w3-button w3-wide">UNILINE</a>
+                <!-- Enlaces de la barra de navegación del lado derecho -->
+                    <div class="w3-right w3-hide-small"><a href="Uniline.us.html#inventario"
+                            class="w3-bar-item w3-button"><i class="fa fa-th"></i>INVENTARIO</a><a
+                            href="Uniline.us.html#acercade" class="w3-bar-item w3-button"><i
+                                class="fa fa-users"></i>ACERCA DE </a><a href="Uniline.us.html#contact"
+                            class="w3-bar-item w3-button"><i class="fa fa-usd"></i>E-COMMERCE</a></div>
+                    <!-- Ocultar enlaces flotantes a la derecha en pantallas pequeñas y reemplazarlos con un ícono de
+                        menú --><a href="javascript:void(0)"
+                            class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()"><i
+                                class="fa fa-bars"></i></a>
+            </div>
+        </div>
+        <!-- Menú para pantallas pequeñas-->
+            <nav class="w3-sidebar w3-bar-block w3-white w3-card w3-animate-left" style="display:none" id="mySidebar"><a
+                    href="javascript:void(0)" onclick="w3_close()"
+                    class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a><a href="Uniline.us.html#inventario"
+                    onclick="w3_close()" class="w3-bar-item w3-button"><i class="fa fa-th"></i>INVENTARIO</a><a
+                    href="Uniline.us.html#acercade" onclick="w3_close()" class="w3-bar-item w3-button"><i
+                        class="fa fa-users"></i>ACERCA DE</a><a href="Uniline.us.html#contact" onclick="w3_close()"
+                    class="w3-bar-item w3-button"><i class="fa fa-usd"></i>E-COMMERCE</a></nav>
+            <!-- Contenido de tu página -->
+                <div class="content-container" id="content">
+                    <!-- Coloca la ruta de la imagen que deseas mostrar aquí --><img
+                            src="http://uniline.com.co/xvusykkpirf9/wp-content/uploads/2024/07/STAMPING-PANTALLA-COMPLETA.png"
+                            alt="Imagen completa" class="imagen"><a
+                            href="https://api.whatsapp.com/send/?phone=573202816007&amptext=Hola&amptype=phone_number&ampapp_absent=0"
+                            class="boton" style="text-decoration: none;">Contactar</a>
+                        <div style="width: 100%; border-top: 5px solid rgb(0, 0, 0);"></div>
+                        <!-- Linea debajo de las imagenes -->
+                            <!-- Contenedor del video y la imagen -->
+                                <div
+                                    style="width: 80%; display: flex; justify-content: right; align-items: center; margin-top: 100px; margin-bottom: 250px;">
+                                    <!-- Imagen a la izquierda del video -->
+                                        <div style="width: 30%; margin-left: auto; margin-right: auto;"><img
+                                                src="http://uniline.com.co/xvusykkpirf9/wp-content/uploads/2023/06/01002034.jpg"
+                                                alt="01002034"
+                                                style="width: 100%; border-top-right-radius: 90px; border-bottom-left-radius: 90px; max-height: 500px;"
+                                                onclick="showImage(this)" class="w3-hover-opacity"></div>
+                                        <!-- Video en el centro -->
+                                            <div style="width: 29%; margin-left: -150px;"><video controls
+                                                    style="max-width: 100%; height: auto;">
+                                                    <source
+                                                        src="http://uniline.com.co/xvusykkpirf9/wp-content/uploads/2023/08/STAMPING.mp4"
+                                                        type="video/mp4">Tu navegador no soporta el elemento de video.
+                                                </video></div>
+                                </div>
+                                <!-- Seis imágenes con espaciado horizontal y vertical ajustado y tamaño personalizado-->
+                                    <div class="w3-container w3-center" style="margin-top: -150px;">
+                                        <!-- Primera fila de tres imágenes -->
+                                            <div class="w3-row">
+                                                <div class="w3-col l4 m4 s12"
+                                                    style="margin-right: 20px; margin-left: 10%; margin-bottom: 50px;">
+                                                    <img src="http://uniline.com.co/xvusykkpirf9/wp-content/uploads/2023/06/01002007.jpg"
+                                                        style="width: 50%; border-top-right-radius: 90px; border-bottom-left-radius: 90px; max-height: 250px;"
+                                                        alt="01002007" onclick="showImage(this)"
+                                                        class="w3-hover-opacity">
+                                                </div>
+                                                <div class="w3-col l4 m4 s12"
+                                                    style="margin-right: 10px; margin-left: -15%; margin-bottom: 50px;">
+                                                    <img src="http://uniline.com.co/xvusykkpirf9/wp-content/uploads/2023/02/01002021.jpg"
+                                                        style="width: 50%; border-top-right-radius: 90px; border-bottom-left-radius: 90px; max-height: 250px;"
+                                                        alt="01002021" onclick="showImage(this)"
+                                                        class="w3-hover-opacity">
+                                                </div>
+                                                <div class="w3-col l4 m4 s12"
+                                                    style="margin-left: -15%; margin-bottom: 50px;"><img
+                                                        src="http://uniline.com.co/xvusykkpirf9/wp-content/uploads/2023/02/01002015-1.jpg"
+                                                        style="width: 50%; border-top-right-radius: 90px; border-bottom-left-radius: 90px; max-height: 250px;"
+                                                        alt="01002015" onclick="showImage(this)"
+                                                        class="w3-hover-opacity"></div>
+                                            </div>
+                                            <!-- Segunda fila de tres imágenes -->
+                                                <div class="w3-row" style="margin-top: 20px;">
+                                                    <div class="w3-col l4 m4 s12"
+                                                        style="margin-right: 20px; margin-left: 10%; margin-bottom: 50px;">
+                                                        <img src="http://uniline.com.co/xvusykkpirf9/wp-content/uploads/2023/06/01002036.jpg"
+                                                            style="width: 50%; border-top-right-radius: 90px; border-bottom-left-radius: 90px; max-height: 250px;"
+                                                            alt="01002036" onclick="showImage(this)"
+                                                            class="w3-hover-opacity">
+                                                    </div>
+                                                    <div class="w3-col l4 m4 s12"
+                                                        style="margin-right: 10px; margin-left: -15%; margin-bottom: 50px;">
+                                                        <img src="Ihttp://uniline.com.co/xvusykkpirf9/wp-content/uploads/2023/06/01002011.jpg"
+                                                            style="width: 50%; border-top-right-radius: 90px; border-bottom-left-radius: 90px; max-height: 250px;"
+                                                            alt="01002011." onclick="showImage(this)"
+                                                            class="w3-hover-opacity">
+                                                    </div>
+                                                    <div class="w3-col l4 m4 s12"
+                                                        style="margin-left: -15%; margin-bottom: 50px;"><img
+                                                            src="http://uniline.com.co/xvusykkpirf9/wp-content/uploads/2023/06/01002018.jpg"
+                                                            style="width: 50%; border-top-right-radius: 90px; border-bottom-left-radius: 90px; max-height: 250px;"
+                                                            alt="01002018" onclick="showImage(this)"
+                                                            class="w3-hover-opacity"></div>
+                                                </div>
+                                    </div>
+                                    <div style="width: 100%; border-top: 5px solid rgb(0, 0, 0);"></div>
+                                    <!-- Linea debajo de las imagenes -->
+                                        <!-- Botones adicionales -->
+                                            <div class="w3-center" style="margin-top: 30px;">
+                                                <div class="w3-button w3-black w3-hover-grey"
+                                                    style="margin-right: 10px;" onmouseover="showCharacteristics()"
+                                                    onmouseout="hideOverlay()"><span class="button-text"
+                                                        style="color: #000000;">CARACTERISTICAS</span></div>
+                                                <div class="w3-button w3-black w3-hover-grey"
+                                                    style="margin-right: 10px;" onmouseover="showProhibitions()"
+                                                    onmouseout="hideOverlay()"><span class="button-text"
+                                                        style="color: #000000;">PROHIBICIONES</span></div>
+                                                <div class="w3-button w3-black w3-hover-grey"
+                                                    onmouseover="showRecommendations()" onmouseout="hideOverlay()"><span
+                                                        class="button-text"
+                                                        style="color: #000000;">RECOMENDACIONES</span></div>
+                                            </div>
+                                            <!-- Contenedor para las imágenes -->
+                                                <div class="w3-center" style="margin-top: 20px;">
+                                                    <div id="characteristicsImages" style="display: none;">
+                                                        <!-- Imágenes de características -->
+                                                            <div class="contenedor"><img
+                                                                    src="http://uniline.com.co/xvusykkpirf9/wp-content/uploads/2023/06/i-56.jpg"
+                                                                    class="img-common w3-hover-opacity mi-imagen-especial">
+                                                                <div class="overlay">
+                                                                    <div class="text">Presentación teñida</div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="contenedor"><img
+                                                                    src="http://uniline.com.co/xvusykkpirf9/wp-content/uploads/2023/06/i-53.jpg"
+                                                                    class="img-common w3-hover-opacity mi-imagen-especial">
+                                                                <div class="overlay">
+                                                                    <div class="text">Estampado</div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="contenedor"><img
+                                                                    src="http://uniline.com.co/xvusykkpirf9/wp-content/uploads/2023/06/i-55-4.jpg"
+                                                                    class="img-common w3-hover-opacity mi-imagen-especial">
+                                                                <div class="overlay">
+                                                                    <div class="text">Derecho y Revés</div>
+                                                                </div>
+                                                            </div>
+                                                    </div>
+                                                    <div id="prohibitionsImages" style="display: none;">
+                                                        <!-- Imágenes de prohibiciones -->
+                                                            <div class="contenedor"><img
+                                                                    src="http://uniline.com.co/xvusykkpirf9/wp-content/uploads/2023/06/i-21-3.jpg"
+                                                                    class="img-common w3-hover-opacity mi-imagen-especial">
+                                                                <div class="overlay">
+                                                                    <div class="text">No utilizar blanqueador</div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="contenedor"><img
+                                                                    src="http://uniline.com.co/xvusykkpirf9/wp-content/uploads/2023/06/i-37-7.jpg"
+                                                                    class="img-common w3-hover-opacity mi-imagen-especial">
+                                                                <div class="overlay">
+                                                                    <div class="text">No secar en maquina de secado
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="contenedor"><img
+                                                                    src="http://uniline.com.co/xvusykkpirf9/wp-content/uploads/2023/06/i-03-3.jpg"
+                                                                    class="img-common w3-hover-opacity mi-imagen-especial">
+                                                                <div class="overlay">
+                                                                    <div class="text">No limpiar con elementos duros
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="contenedor"><img
+                                                                    src="http://uniline.com.co/xvusykkpirf9/wp-content/uploads/2023/06/i-31-6.jpg"
+                                                                    class="img-common w3-hover-opacity mi-imagen-especial">
+                                                                <div class="overlay">
+                                                                    <div class="text">No limpiar en seco</div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="contenedor"><img
+                                                                    src="http://uniline.com.co/xvusykkpirf9/wp-content/uploads/2023/06/i-06-6.jpg"
+                                                                    class="img-common w3-hover-opacity mi-imagen-especial">
+                                                                <div class="overlay">
+                                                                    <div class="text">Mantener alejado de fuentes de
+                                                                        calor</div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="contenedor"><img
+                                                                    src="http://uniline.com.co/xvusykkpirf9/wp-content/uploads/2023/06/i-34-2.jpg"
+                                                                    class="img-common w3-hover-opacity mi-imagen-especial">
+                                                                <div class="overlay">
+                                                                    <div class="text">No fusible con tela blanca y de
+                                                                        color</div>
+                                                                </div>
+                                                            </div>
+                                                    </div>
+                                                    <div id="recommendationsImages" style="display: none;">
+                                                        <!-- Imágenes de recomendaciones -->
+                                                            <div class="contenedor"><img
+                                                                    src="http://uniline.com.co/xvusykkpirf9/wp-content/uploads/2023/06/i-18-7.jpg"
+                                                                    class="img-common w3-hover-opacity mi-imagen-especial">
+                                                                <div class="overlay">
+                                                                    <div class="text">Lavado leve de temperatura de 30°C
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="contenedor"><img
+                                                                    src="http://uniline.com.co/xvusykkpirf9/wp-content/uploads/2023/06/i-32-7.jpg"
+                                                                    class="img-common w3-hover-opacity mi-imagen-especial">
+                                                                <div class="overlay">
+                                                                    <div class="text">Planchado a temperatura media de
+                                                                        140°C</div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="contenedor"><img
+                                                                    src="http://uniline.com.co/xvusykkpirf9/wp-content/uploads/2023/06/i-39-5.jpg"
+                                                                    class="img-common w3-hover-opacity mi-imagen-especial">
+                                                                <div class="overlay">
+                                                                    <div class="text">Tender mojado en la sombra</div>
+                                                                </div>
+                                                            </div>
+                                                    </div>
+                                                </div>
+                                                <script> // Funciones para mostrar las imágenes correspondientes
+
+                                                    function showCharacteristics() {
+                                                        document.getElementById("characteristicsImages").style.display = "block";
+                                                        document.getElementById("prohibitionsImages").style.display = "none";
+                                                        document.getElementById("recommendationsImages").style.display = "none";
+                                                    }
+
+                                                    function showProhibitions() {
+                                                        document.getElementById("characteristicsImages").style.display = "none";
+                                                        document.getElementById("prohibitionsImages").style.display = "block";
+                                                        document.getElementById("recommendationsImages").style.display = "none";
+                                                    }
+
+                                                    function showRecommendations() {
+                                                        document.getElementById("characteristicsImages").style.display = "none";
+                                                        document.getElementById("prohibitionsImages").style.display = "none";
+                                                        document.getElementById("recommendationsImages").style.display = "block";
+                                                    }
+
+                                                </script>
+                                                <footer class="w3-center w3-black w3-padding-32"
+                                                    style="margin-top: 100px;">
+                                                    <div class="footer-content">
+                                                        <!-- Contenedor para la imagen -->
+                                                            <div>
+                                                                <!-- Agrega la imagen en la esquina superior izquierda
+                                                                    del footer --><img
+                                                                        src="http://uniline.com.co/xvusykkpirf9/wp-content/uploads/2023/02/Logo_UNILINE_Blanco.png"
+                                                                        alt="Imagen del footer" class="footer-image">
+                                                            </div>
+                                                            <!-- Contenedor para el contenido "Sobre UNILINE" y texto
+                                                                adicional -->
+                                                                <div style="max-width: 400px; text-align: left;">
+                                                                    <!-- max-width: Que tan ancho es el texto -->
+                                                                        <div style="margin-right: 50px;">
+                                                                            <!-- Contenedor para el
+                                                                                contenido "Sobre UNILINE" -->
+                                                                                <p><a title="W3.CSS"
+                                                                                        target="_blank">SOBRE
+                                                                                        UNILINE</a></p>
+                                                                                <p>SCHOOL LINE™ respalda a las mejores
+                                                                                    marcas de tela para confección de
+                                                                                    ropa dando calidad y
+                                                                                    reproducibilidad en cada una de sus
+                                                                                    referencias</p>
+                                                                        </div>
+                                                                </div>
+                                                                <!-- Contenedor para los detalles de contacto -->
+                                                                    <div class="contact-details">
+                                                                        <p style="margin-bottom: 15px;">CONTACT</p>
+                                                                        <p id="correo"
+                                                                            onmouseover="changeColor('correo')"
+                                                                            onmouseout="restoreColor('correo')"
+                                                                            style="margin-bottom: 15px;">
+                                                                            Ventas@dislana.com</p>
+                                                                        <p id="numero"
+                                                                            onmouseover="changeColor('numero')"
+                                                                            onmouseout="restoreColor('numero')"
+                                                                            style="margin-bottom: 15px;">+57 312 4578522
+                                                                        </p>
+                                                                    </div>
+                                                    </div>
+                                                    <!-- Contenedor para los iconos sociales -->
+                                                        <div class="social-icons" style="margin-top: 20px;"><a
+                                                                href="https://api.whatsapp.com/send/?phone=573202816007&text=Hola&type=phone_number&app_absent=0"
+                                                                target="_blank"><i
+                                                                    class="fa fa-whatsapp w3-hover-opacity"></i></a><a
+                                                                href="https://www.instagram.com/unilinebilliard/"
+                                                                target="_blank"><i
+                                                                    class="fa fa-instagram w3-hover-opacity"></i></a><a
+                                                                href="https://www.facebook.com/unilinebilliard"
+                                                                target="_blank"><i
+                                                                    class="fa fa-facebook-official w3-hover-opacity"></i></a>
+                                                        </div>
+                                                </footer>
+                                                <script>function changeColor(elementId) {
+                                                        document.getElementById(elementId).style.color = "blue";
+                                                    }
+
+                                                    function restoreColor(elementId) {
+                                                        document.getElementById(elementId).style.color = "white";
+                                                    }
+
+                                                </script>
+                                                <!-- Línea horizontal -->
+                                                    <div style=" border-top: 0.1px solid white;  "></div>
+                                                    <footer class="w3-center w3-black w3-padding-64"
+                                                        style="display: flex; justify-content: right;">
+                                                        <!-- Contenedor para el texto adicional -->
+                                                            <div class="footer-links"
+                                                                style="margin-right: auto; margin-left: 45px;">
+                                                                <div style="margin-top: 1px;">
+                                                                    <p><a title="W3.CSS" target="_blank"
+                                                                            style="text-decoration: none;">© copyright
+                                                                            WPDeveloper 2023</a></p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="footer-links"
+                                                                style="margin-right: auto; margin-left: 40px;">
+                                                                <div style="margin-top: 10px; margin-bottom: 5px;">
+                                                                    <!-- Ajuste el margen inferior para reducir el
+                                                                        espacio -->
+                                                                        <p><a href="Politicas.html" title="W3.CSS"
+                                                                                target="_blank"
+                                                                                class="w3-hover-text-blue"
+                                                                                style="text-decoration: none;">Privacy
+                                                                                Policy </a></p>
+                                                                </div>
+                                                                <div style="margin-top: 5px;">
+                                                                    <!-- Ajuste el margen superior para reducir espacio -->
+                                                                        <p><a href="Terminos.html" title="W3.CSS"
+                                                                                target="_blank"
+                                                                                class="w3-hover-text-blue"
+                                                                                style="text-decoration: none;">Terms &
+                                                                                Conditions</a></p>
+                                                                </div>
+                                                            </div>
+                                                    </footer>
+                                                    <!-- Botón fijo de WhatsApp con texto en negrita, logo más grande ysombreado exterior -->
+                                                        <div class="whatsapp-button"><a href="https://web.whatsapp.com/"
+                                                                target="_blank"><i
+                                                                    class="fa fa-whatsapp fa-lg"></i><span
+                                                                    class="button-text">¿ Tienes preguntas ?</span></a>
+                                                        </div>
+                                                        <!-- Script para manejar la visibilidad del div fijo en la parte inferior -->
+                                                            <script>window.onscroll = function () {
+                                                                    scrollFunction()
+                                                                }
+
+                                                                    ;
+
+                                                                function scrollFunction() {
+                                                                    var content = document.getElementById("content");
+                                                                    var bottomOverlay = document.querySelector(".bottom-overlay");
+
+                                                                    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+                                                                        bottomOverlay.style.display = "block";
+                                                                    }
+
+                                                                    else {
+                                                                        bottomOverlay.style.display = "none";
+                                                                    }
+                                                                }
+
+                                                            </script>
+                                                            <!-- Modal de la imagen -->
+                                                                <div id="modal01" class="w3-modal" style="display: none"
+                                                                    onclick="closeModal()">
+                                                                    <div
+                                                                        class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+                                                                        <img id="img01" class="w3-image"
+                                                                            style="max-height: 80vh; max-width: 80vw;">
+                                                                        <p id="caption"></p>
+                                                                    </div>
+                                                                </div>
+                                                                <script> // Función para mostrar la imagen en un modal
+
+                                                                    function showImage(element) {
+                                                                        var modal = document.getElementById("modal01");
+                                                                        var img = document.getElementById("img01");
+                                                                        var captionText = document.getElementById("caption");
+                                                                        img.src = element.src;
+                                                                        // Cambiar el color y el estilo del texto alt
+                                                                        captionText.innerHTML = "<span style='color: white; font-weight: bold;'>" + element.alt + "</span>";
+                                                                        modal.style.display = "block";
+                                                                    }
+
+                                                                    // Función para cerrar el modal
+                                                                    function closeModal() {
+                                                                        var modal = document.getElementById("modal01");
+                                                                        modal.style.display = "none";
+                                                                    }
+                                                                </script>
+
+</body>
+<script>
+
+    /*Script del menu en pantallas pequeñas*/
+    function w3_open() {
+        document.getElementById("mySidebar").style.display = "block";
+    }
+
+    function w3_close() {
+        document.getElementById("mySidebar").style.display = "none";
+    }
+
+    function toggleDropdown(id) {
+        var element = document.getElementById(id);
+
+        if (element.style.display === "block") {
+            element.style.display = "none";
+        }
+
+        else {
+            element.style.display = "block";
+        }
+    }
+
+</script>
+
+</html>

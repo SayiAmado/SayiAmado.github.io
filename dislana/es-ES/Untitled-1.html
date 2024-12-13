@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas como fondo</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .background-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1; /* Para que el canvas esté detrás del contenido */
+        }
+    </style>
+</head>
+<body>
+    <canvas id="backgroundCanvas" class="background-canvas"></canvas>
+    <div class="content">
+        <!-- Contenido de tu página -->
+        <h1>Contenido de la página</h1>
+        <p>Esto es un ejemplo de contenido.</p>
+    </div>
+    <script>
+        // JavaScript para dibujar en el canvas
+        window.onload = function() {
+            var canvas = document.getElementById('backgroundCanvas');
+            var ctx = canvas.getContext('2d');
+
+            // Ajustar el tamaño del canvas al tamaño de la ventana
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+
+            // Dibujar en el canvas (ejemplo: un fondo de color)
+            ctx.fillStyle = '#FFDDC1';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            // Ejemplo de dibujo: un círculo
+            ctx.beginPath();
+            ctx.arc(canvas.width / 2, canvas.height / 2, 100, 0, 2 * Math.PI);
+            ctx.fillStyle = '#FF5733';
+            ctx.fill();
+        };
+    </script>
+</body>
+</html>
