@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" sizes="180x180" href="/es-ES/IMAGENES/fav/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/es-ES/IMAGENES/fav/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/es-ES/IMAGENES/fav/favicon-16x16.png">
+    <link rel="manifest" href="/es-ES/IMAGENES/fav/site.webmanifest">
+    <link rel="mask-icon" href="/es-ES/IMAGENES/fav/safari-pinned-tab.svg" color="#000000">
+    <link rel="shortcut icon" href="/es-ES/IMAGENES/fav/favicon.ico">
+    <meta name="msapplication-TileColor" content="#000000">
+    <meta name="msapplication-config" content="/es-ES/IMAGENES/fav/browserconfig.xml">
+    <meta name="theme-color" content="#000000">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Deustch - Uniline</title>
+    <style>
+        .container {
+            font-family: "Raleway", sans-serif;
+            position: absolute;
+            left: 85%;
+            top: 20%;
+            transform: translateY(-50%);
+            height: 55px;
+            width: 300px;
+            border-radius: 1em;
+            overflow: hidden;
+            box-shadow: 0 10px 20px #4d4d4d;
+            z-index: 15;
+        }
+    
+        .palette {
+            display: flex;
+            height: 86%;
+            width: 100%;
+        }
+    
+        .color {
+            height: 100%;
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            letter-spacing: 1px;
+            transition: flex 0.1s linear;
+        }
+    
+        .color span {
+            opacity: 0;
+            transition: opacity 0.1s linear;
+        }
+    
+        .color:nth-child(1) {
+            background: #007348;
+        }
+    
+        .color:nth-child(2) {
+            background: #005d62;
+        }
+        .color:nth-child(3) {
+            background: #004e93;
+        }
+    
+        .color:nth-child(4) {
+            background: #01578a;
+        }
+        .color:hover {
+            flex: 2;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        }
+    
+        .color:hover span {
+            opacity: 1;
+        }
+    
+        #stats {
+            height: 30%;
+            background: rgb(53, 53, 53);
+            display: flex;
+            align-items: center;
+            box-sizing: border-box;
+            color: #ffffff;
+        }
+    
+        @media (max-width: 768px) {
+            .container {
+                position: static;
+                transform: translateY(-225%);
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="linea.css">
+    <link rel="stylesheet" href="style-home.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <div class="w3-top">
+        <div class="w3-bar w3-black w3-card" id="navbar">
+            <a href="index.html" class="w3-bar-item w3-button w3-padding-large">UNILINE</a>
+            <a href="Contenido - Uniline.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">CONTEÚDO</a>
+            <a href="http://ecommerce.dislana.com/dist/Dislana/#/"
+                class="w3-bar-item w3-button w3-padding-large w3-hide-small">E-COMMERCE</a>
+            <a href="javascript:void(0);"
+                class="w3-bar-item w3-button w3-padding-large w3-right w3-hide-large w3-hide-medium"
+                style="position: fixed; z-index: 200; left: 80%;" onclick="toggleNavbar()">&#9776;</a>
+        </div>
+    
+        <div class="idiomas">
+            <div class="select">
+                <div class="selected" id="selectedLanguage" style="display: block; background-color: #000000;">
+                    <!-- Flecha -->
+                    <svg xmlns="http://www.w3.org/2000/svg" height="3em" viewBox="0 0 512 512" class="arrow">
+                        <path
+                            d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z">
+                        </path>
+                    </svg>
+                    Portugues   
+                </div>
+                <div class="options">
+                    <div title="all">
+                        <input id="all" name="option" type="radio" checked="" />
+                        <label class="option" for="all" data-txt="Portugues"></label>
+                      </div>
+                    <div title="Español">
+                        <input id="Español" name="option" type="radio" />
+                        <label class="option" for="Español" data-txt="Español"></label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Menu lateral -->
+        <div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top"
+            style="margin-top:46px; z-index: 200000;">
+            <a href="Contenido - Uniline.html" class="w3-bar-item w3-button w3-padding-large"
+                onclick="myFunction()">CONTEÚDO</a>
+            <a href="http://ecommerce.dislana.com/dist/Dislana/#/" class="w3-bar-item w3-button w3-padding-large"
+                onclick="myFunction()">E-COMMERCE</a>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="image-container w3-content w3-section">
+            <img class="mySlides w3-animate-fading" src="IMAGENES/PRESENTACION/PROFESIONALCAROM/DEUTSCH990.jpg"
+                alt="Billiard Table">
+            <img class="mySlides w3-animate-fading" src="IMAGENES/PRESENTACION/PROFESIONALCAROM/DEUTSCH-2.jpg"
+                alt="Billiard Table">
+        </div>
+        <div class="text-container">
+            <div class="date-category">Uniline | Professional Carom</div>
+            <h1>DEUTSCH 990<sup>®</sup></h1>
+            <p>O corte alemão destaca-se pela sua velocidade e pelagem</p>
+            <p>uniforme, que melhora a aderência da bola, evitando </p>
+            <p>giros inesperados.</p>
+            <a href="javascript:window.open('fichas/DEUTSCH990®  T12-001.pdf','mywindowtitle','width=1200,height=900')">FICHA TÉCNICA</a>
+        </div>
+        <div class="container">
+            <div id="stats">
+                <span> &nbsp; &nbsp;CORES DISPONÍVEIS</span>
+            </div>
+            <div class="palette">
+                <div class="color"><span>001</span></div>
+                <div class="color"><span>002</span></div>
+                <div class="color"><span>005</span></div>
+                <div class="color"><span>015</span></div>
+            </div>
+        </div>
+    </div>
+    <!-- Botones sociales -->
+    <!-- Social Buttons -->
+    <div class="social-buttons-container">
+        <div class="social-button whatsapp"><a
+                href="https://api.whatsapp.com/send/?phone=573202816007&text=Hola&type=phone_number&app_absent=0"><i
+                    class="fa fa-whatsapp"></i></a></div>
+        <div class="social-button instagram"><a href="https://www.instagram.com/unilinebilliard/"><i
+                    class="fa fa-instagram"></i></a></div>
+        <div class="social-button facebook"><a href="https://www.facebook.com/unilinebilliard"><i
+                    class="fa fa-facebook"></i></a></div>
+        <div class="social-button tiktok">
+            <a href="https://www.tiktok.com/@uniline.tv" target="_blank">
+                <img src="IMAGENES/LOGOS/Tiktok.png" alt="TikTok Logo" style="width: 50px; height: 28px;">
+            </a>
+        </div>
+    </div>
+    <!-- Footer -->
+    <footer class="footer-distributed">
+
+        <div class="footer-left">
+
+            <h3><img src="IMAGENES/LOGOS/Logo_UNILINE_Blanco2.png" alt="Image 9" width="50%"></h3>
+            <p class="footer-links">
+                <a href="https://www.uniline.com.co/garantia-efectiva/">Garantia Efetiva</a>
+                <a href="Termos.bilhar.html">Termos e Condições</a>
+            <p class="footer-company-name">Dislana© 2024</p>
+        </div>
+        <div class="footer-center">
+            <div>
+                <i class="fa fa-map-marker"></i>
+                <p><span>Cl. 9 #41 a 16</span> Bogotá, Colombia</p>
+            </div>
+            <div>
+                <i class="fa fa-phone"></i>
+                <p>+57 312 4578522</p>
+            </div>
+
+            <div>
+                <i class="fa fa-envelope"></i>
+                <p><a href="mailto:ventas@dislana.com">ventas@dislana.com</a></p>
+            </div>
+
+        </div>
+
+        <div class="footer-right">
+            <p class="footer-company-about">
+                <span>SOBRE UNILINE</span>
+                A UNILINE apoia as melhores marcas de panos de bilhar a nível Profissional, Desportivo-Recreativo e
+                Decorativo, proporcionando a melhor qualidade e precisão.
+            </p>
+        </div>
+    </footer>
+    <script>
+        function changeColor(elementId) {
+            document.getElementById(elementId).style.color = "blue";
+        }
+        function restoreColor(elementId) {
+            document.getElementById(elementId).style.color = "white";
+        }
+        function toggleNavbar() {
+            var x = document.getElementById("navDemo");
+            if (x.className.indexOf("w3-show") === -1) {
+                x.className += " w3-show";
+            } else {
+                x.className = x.className.replace(" w3-show", "");
+            }
+        }
+
+        function openModal(videoSrc, imageSources, imageLinks) {
+            var modal = document.getElementById("myModal");
+            var video = document.getElementById("modalVideo");
+            var additionalImagesContainer = document.getElementById("additionalImages");
+
+            video.src = videoSrc;
+
+            // Limpiar imágenes adicionales anteriores
+            additionalImagesContainer.innerHTML = '';
+
+            video.style.marginRight = '50px';
+
+            var imgSize;
+            if (window.innerWidth <= 480) {
+                imgSize = '180px'; // Tamaño para pantallas muy pequeñas
+            } else if (window.innerWidth <= 768) {
+                imgSize = '180px'; // Tamaño para pantallas móviles
+            } else {
+                imgSize = '380px'; // Tamaño por defecto
+            }
+
+
+            // Añadir imágenes adicionales con enlaces
+            for (var i = 0; i < imageSources.length; i++) {
+                var link = document.createElement('a');
+                link.href = imageLinks[i];
+                link.target = '_blank';
+                var img = document.createElement('img');
+                img.src = imageSources[i];
+
+                img.classList.add('fixed-size-image');
+                img.style.width = imgSize;
+
+                link.appendChild(img);
+                additionalImagesContainer.appendChild(link);
+            }
+            modal.style.display = "block";
+        }
+        function closeModal() {
+            var modal = document.getElementById("myModal");
+            var video = document.getElementById("modalVideo");
+
+            modal.style.display = "none";
+            video.pause();
+            video.src = '';
+        }
+        window.onclick = function (event) {
+            var modal = document.getElementById("myModal");
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+    </script>
+    <script>
+        //IDIOMAS
+        const radioButtons = document.querySelectorAll('input[name="option"]');
+        const selectedElement = document.querySelector('.selected');
+
+        radioButtons.forEach(radio => {
+            radio.addEventListener('change', (event) => {
+                const selectedOption = event.target.id;
+                const selectedText = document.querySelector(`label[for="${selectedOption}"]`).dataset.txt; 
+
+                console.log(`Idioma seleccionado: ${selectedText}`);
+                if (selectedText === "Español") {
+                    window.location.href = "../es-ES/Deustch 990 - Uniline.html";
+                }
+            });
+        });
+    </script>
+    <script>
+        var myIndex = 0;
+        carousel();
+
+        function carousel() {
+            var i;
+            var x = document.getElementsByClassName("mySlides");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            myIndex++;
+            if (myIndex > x.length) { myIndex = 1 }
+            x[myIndex - 1].style.display = "block";
+            setTimeout(carousel, 6000);
+        }
+    </script>
+</body>
+
+</html>

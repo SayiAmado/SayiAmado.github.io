@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Uniline - Billar</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" sizes="180x180" href="/es-ES/IMAGENES/fav/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/es-ES/IMAGENES/fav/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/es-ES/IMAGENES/fav/favicon-16x16.png">
+    <link rel="manifest" href="/es-ES/IMAGENES/fav/site.webmanifest">
+    <link rel="mask-icon" href="/es-ES/IMAGENES/fav/safari-pinned-tab.svg" color="#000000">
+    <link rel="shortcut icon" href="/es-ES/IMAGENES/fav/favicon.ico">
+    <meta name="msapplication-TileColor" content="#000000">
+    <meta name="msapplication-config" content="/es-ES/IMAGENES/fav/browserconfig.xml">
+    <meta name="theme-color" content="#000000">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: "Raleway", sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .didact-gothic-regular {
+            font-family: "Didact Gothic", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: Gotham;
+            src: url('font/Gotham\ Black\ Regular.ttf');
+        }
+
+        h1 {
+            font-family: Gotham;
+        }
+
+        @font-face {
+            font-family: Gothic;
+            src: url('font/GOTHIC.TTF');
+        }
+
+        h2 {
+            font-family: Gothic;
+        }
+
+
+        body,
+        html {
+            height: 100%;
+            line-height: 1.4;
+        }
+
+        .w3-bar .w3-button {
+            padding: 25px 30px;
+            transition: color 0.3s;
+            background-color: transparent !important;
+        }
+
+        .w3-bar a:hover,
+        .w3-bar a:focus {
+            color: rgb(12, 243, 212) !important;
+        }
+
+        .w3-top {
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        :root {
+            --col-bg: #000000;
+            --col-link: #275d8a;
+            --col-text: #ebe7c5;
+            --col-particle-stroke-hover: #0892d0;
+            --col-particle-stroke: #035096;
+            --col-particle: #536878
+        }
+
+        .mapa-mental-container {
+            position: relative;
+            width: 52%;
+            /* Tamaño original en pantallas más grandes */
+            margin: 8px auto 0;
+            /* Ajusta el margen superior para dar más espacio */
+            height: auto;
+            display: flex;
+            justify-content: left;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .col-wrapper {
+            display: block;
+        }
+
+
+        .overlay-image {
+            position: absolute;
+            width: 13%;
+            /* Tamaño original en pantallas más grandes */
+            height: auto;
+            z-index: 10;
+            cursor: pointer;
+        }
+
+        @media screen and (max-width: 768px) {
+            .mapa-mental-container {
+                width: 100%;
+                margin-top: 180px;
+            }
+
+            .info-container {
+                width: 80%;
+            }
+
+            .info-container img {
+                position: relative;
+                left: 80px;
+                top: -280px;
+                width: 120%;
+                z-index: 999;
+            }
+
+            .overlay-image {
+                width: 16%;
+            }
+
+            .idiomas {
+                top: 5%;
+                left: 30%;
+            }
+
+            .thumbnail-container {
+                display: flex;
+                width: fit-content;
+                overflow-x: scroll;
+                overflow-y: hidden;
+            }
+
+            .thumbnail {
+                position: relative;
+                left: 50%;
+                display: flex;
+                flex-flow: row;
+                width: 10%;
+                height: 80%;
+            }
+        }
+
+        .overlay-image.overlay-image-2 {
+            top: 7%;
+            left: 52.1%;
+            transform: translate(-50%, -50%);
+        }
+
+        .overlay-image.overlay-image-3 {
+            top: 13%;
+            left: 37%;
+            transform: translate(-50%, -50%);
+        }
+
+        .overlay-image.overlay-image-4 {
+            top: 29.3%;
+            left: 27%;
+            transform: translate(-50%, -50%);
+        }
+
+        .overlay-image.overlay-image-5 {
+            top: 49.2%;
+            left: 23%;
+            transform: translate(-50%, -50%);
+        }
+
+        .overlay-image.overlay-image-6 {
+            top: 69.5%;
+            left: 27%;
+            transform: translate(-50%, -50%);
+        }
+
+        .overlay-image.overlay-image-7 {
+            top: 84%;
+            left: 37%;
+            transform: translate(-50%, -50%);
+        }
+
+        .overlay-image.overlay-image-8 {
+            top: 90.6%;
+            left: 52.1%;
+            transform: translate(-50%, -50%);
+        }
+
+        .overlay-image.overlay-image-9 {
+            top: 28.3%;
+            left: 76.3%;
+            transform: translate(-50%, -50%);
+        }
+
+        .overlay-image.overlay-image-10 {
+            top: 70.5%;
+            left: 76.3%;
+            transform: translate(-50%, -50%);
+        }
+
+        .social-button {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            width: 45px;
+            height: 45px;
+            background-color: transparent;
+            border: 2px solid white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .social-button a {
+            color: white;
+            text-decoration: none;
+            font-size: 24px;
+        }
+
+        .social-button img {
+            width: 24px;
+            height: 24px;
+            display: block;
+        }
+
+        .social-button.whatsapp:hover {
+            background-color: #25D366;
+        }
+
+        .social-button.instagram:hover {
+            background-color: #df08a9;
+        }
+
+        .social-button.facebook:hover {
+            background-color: #2bbde9;
+        }
+
+        .social-button.tiktok:hover {
+            background-color: #ffffff;
+        }
+
+        .social-button.instagram {
+            bottom: 68px;
+            transform: translateX(-100px);
+            opacity: 0;
+        }
+
+        .social-button.facebook {
+            bottom: 118px;
+            transform: translateX(-100px);
+            opacity: 0;
+        }
+
+        .social-button.tiktok {
+            bottom: 168px;
+            transform: translateX(-100px);
+            opacity: 0;
+        }
+
+        .social-buttons-container:hover .social-button.instagram,
+        .social-buttons-container:hover .social-button.facebook,
+        .social-buttons-container:hover .social-button.tiktok {
+            transform: translateX(0);
+            opacity: 1;
+        }
+
+        .social-buttons-container {
+            position: fixed;
+            bottom: 50px;
+            left: 50px;
+            z-index: 999;
+        }
+
+        .idiomas {
+            position: fixed;
+            display: inline-block;
+            top: 0.8%;
+            right: 5%;
+            z-index: 10001;
+        }
+
+        .info-container {
+            position: absolute;
+            left: -15%;
+            top: 50%;
+            padding: 0;
+            z-index: 7;
+        }
+
+        .info-container img {
+            width: "28%";
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0, 0, 0);
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+
+        .fixed-size-image {
+            width: 350px;
+        }
+
+        .modal-content {
+            position: relative;
+            margin: auto;
+            padding: 0;
+            width: 80%;
+            max-width: 1200px;
+        }
+
+        .modal-body {
+            display: flex;
+            justify-content: center;
+            /* Centra horizontalmente */
+            align-items: center;
+            /* Centra verticalmente */
+            height: 100%;
+            /* Asegúrate de que .modal-body tenga un alto definido */
+        }
+
+        .modal-body video {
+            width: 35%;
+            /* Ajusta el ancho del video según necesites */
+            height: auto;
+            border-radius: 10px;
+            /* Añade bordes redondeados */
+            margin-top: 100px;
+            /* Ajusta este valor según sea necesario */
+        }
+
+        .modal-body .additional-images {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-body .additional-images img {
+            width: 50%;
+            /* Ajusta el ancho de las imágenes según sea necesario */
+            height: auto;
+            border-radius: 10px;
+            /* Bordes redondeados para las imágenes */
+            margin: 5px 0;
+            /* Espaciado entre las imágenes */
+        }
+
+        .clickable {
+            cursor: pointer;
+        }
+
+        /* Estilo para los controles del video */
+        .modal-body video::-webkit-media-controls-panel,
+        .modal-body video::-webkit-media-controls-start-playback-button {
+            border-radius: 10px;
+            /* Bordes redondeados para los controles */
+        }
+
+        /* Estilo para el botón de cerrar */
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 25px;
+            color: white;
+            font-size: 35px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /*MODAL VIDEOS*/
+        /* Modal styles */
+        .modal_nt {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        .modal_nt.active {
+            display: flex;
+        }
+
+        .modal-content {
+            border-radius: 8px;
+            width: 90%;
+            height: 90%;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #525252;
+            border: none;
+            color: #fff;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        .carousel {
+            display: flex;
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+        }
+
+        .carousel-item {
+            min-width: 100%;
+            height: 100%;
+            transition: transform 0.5s ease-in-out;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .carousel-item video {
+            height: 100%;
+            width: auto;
+        }
+
+        .controls {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+
+        .controls button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        .controls button:hover {
+            background-color: #0056b3;
+        }
+
+        .video-container {
+            width: 100%;
+            height: 60vh;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .video-container video {
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        .video-container2 {
+            width: 100%;
+            height: 60vh;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .video-container2 video {
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        .thumbnail-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 2px;
+        }
+
+        .thumbnail {
+            width: 200px;
+            height: 56px;
+            margin: 0 4px;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: border 0.3s;
+        }
+
+        .thumbnail:hover {
+            border: 2px solid #000;
+        }
+    </style>
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="style-home.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <div class="w3-top">
+        <div class="w3-bar w3-black w3-card" id="navbar">
+            <a href="index.html" class="w3-bar-item w3-button w3-padding-large">UNILINE</a>
+            <a href="Contenido - Uniline.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">CONTEÚDO</a>
+            <a href="http://ecommerce.dislana.com/dist/Dislana/#/"
+                class="w3-bar-item w3-button w3-padding-large w3-hide-small">E-COMMERCE</a>
+            <a href="javascript:void(0);"
+                class="w3-bar-item w3-button w3-padding-large w3-right w3-hide-large w3-hide-medium"
+                onclick="toggleNavbar()">&#9776;</a>
+        </div>
+
+        <div class="idiomas">
+            <div class="select">
+                <div class="selected" id="selectedLanguage" style="display: block; background-color: #000000;">
+                    <!-- Flecha -->
+                    <svg xmlns="http://www.w3.org/2000/svg" height="3em" viewBox="0 0 512 512" class="arrow">
+                        <path
+                            d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z">
+                        </path>
+                    </svg>
+                    Portugues   
+                </div>
+                <div class="options">
+                    <div title="all">
+                        <input id="all" name="option" type="radio" checked="" />
+                        <label class="option" for="all" data-txt="Portugues"></label>
+                      </div>
+                    <div title="Español">
+                        <input id="Español" name="option" type="radio" />
+                        <label class="option" for="Español" data-txt="Español"></label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Menu lateral -->
+        <div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top"
+            style="margin-top:46px">
+            <a href="Contenido - Uniline.html" class="w3-bar-item w3-button w3-padding-large"
+                onclick="myFunction()">CONTEÚDO</a>
+            <a href="http://ecommerce.dislana.com/dist/Dislana/#/" class="w3-bar-item w3-button w3-padding-large"
+                onclick="myFunction()">E-COMMERCE</a>
+        </div>
+    </div>
+    <!-- Línea horizontal -->
+    <div style=" border: 0.5px solid transparent; margin-top: 30px;"></div>
+
+
+
+    <!-- Sección 1 -->
+    <section class="section one">
+        <div class="content">
+            <p class="large" style="text-align: center">UNILINE</p>
+            <p class="medium"><b>THE BEST AMERICAN BILLIARD CLOTHES</b></p>
+            <p class="small">A UNILINE apoia as melhores marcas de <br>
+                ROUPAS DE BILHAR a nível profissional, desportivo-recreativo <br>
+                e decorativo, oferecendo a melhor tecnologia, qualidade <br>
+                e precisão em cada jogo.</p>
+        </div>
+        <a href="#section-two" class="button down-arrow">&nbsp; Descubra mais</a>
+    </section>
+
+    <!-- Sección 2 -->
+    <section id="section-two" class="section two">
+        <div class="info-container">
+            <img src="IMAGENES/MAPA-MENTAL-2.PNG" alt="info" width="30%">
+        </div>
+        <div class="mapa-mental-container">
+            <img src="IMAGENES/gif_new.gif" alt="Mapa Mental" width="100%">
+            <img src="IMAGENES/LINEAS DE PAÑO/Schutzend.png" alt=" Image 2"
+                class="overlay-image overlay-image-2 clickable green"
+                onclick="openModal('IMAGENES/VIDEOS/Alice Shutzend.mp4', ['IMAGENES/BRANDING/schutzend.jpg'] , ['Schutzend - Uniline.html'])">
+            <img src="IMAGENES/LINEAS DE PAÑO/Professional Carom.png" alt="Image 3"
+                class="overlay-image overlay-image-3 clickable blue"
+                onclick="openModal('IMAGENES/VIDEOS/profesional carom 01.mp4', ['IMAGENES/BRANDING/Professional Carom/New England professional.jpg','IMAGENES/BRANDING/Professional Carom/New England 190.jpg', 'IMAGENES/BRANDING/Professional Carom/Deutsoh.jpg', 'IMAGENES/BRANDING/Professional Carom/N E Geometric.jpg'],['New England 160 - Uniline.html' ,'New England 190 - Uniline.html', 'Deustch 990 - Uniline.html', ' New England Geometric - Uniline.html'])">
+            <img src="IMAGENES/LINEAS DE PAÑO/Professional Pool.png" alt="Image 4"
+                class="overlay-image overlay-image-4 clickable blue"
+                onclick="openModal('IMAGENES/VIDEOS/profesional pool_1.mp4', ['IMAGENES/BRANDING/Professional Pool/UNIK.jpg'], ['Unik - Uniline.html'])">
+            <img src="IMAGENES/LINEAS DE PAÑO/Sports Carom.png" alt="Image 5"
+                class="overlay-image overlay-image-5 clickable aqua"
+                onclick="openModal('IMAGENES/VIDEOS/Sport carom.mp4', ['IMAGENES/BRANDING/Sport Carom/Grano z.jpg', 'IMAGENES/BRANDING/Sport Carom/GRANO SUPER.jpg', 'IMAGENES/BRANDING/Sport Carom/FILADELFIA.JPG','IMAGENES/BRANDING/Sport Carom/Meisterscahft.jpg'], ['Grano Zeta - Uniline.html', 'Grano Super - Uniline.html', 'Filadelfia - Uniline.html','Meisterschaft - Uniline.html'])">
+            <img src="IMAGENES/LINEAS DE PAÑO/Sports Pool.png" alt="Image 6"
+                class="overlay-image overlay-image-6 clickable aqua"
+                onclick="openModal('IMAGENES/VIDEOS/sport pool_1.mp4', [ 'IMAGENES/BRANDING/Sports Pool/TRES RAYAS 100.jpg', 'IMAGENES/BRANDING/Sports Pool/TRES RAYAS 50.jpg','IMAGENES/BRANDING/Sports Pool/Tres rayas 20.jpg','IMAGENES/BRANDING/Sports Pool/GEOMETRIC.jpg','IMAGENES/BRANDING/Sports Pool/CHAMPIONSHIP.jpg'], ['3 Rayas 100% - Uniline.html', '3 Rayas 50% - Uniline.html', '3 Rayas 20% - Uniline.html','Geometric - Uniline.html','ChampionShip - Uniline.html'])">
+            <img src="IMAGENES/LINEAS DE PAÑO/Recreative.png" alt="Image 7"
+                class="overlay-image overlay-image-7 clickable olive"
+                onclick="openModal('IMAGENES/VIDEOS/recreativo pool_1.mp4', ['IMAGENES/BRANDING/Recreative/POOL CAMPEON.jpg','IMAGENES/BRANDING/Recreative/CUSTOM.jpg', 'IMAGENES/BRANDING/Recreative/XPOOL.jpg','IMAGENES/BRANDING/Recreative/CUANTIKO.jpg' ], ['Pool Campeon - Uniline.html', 'Custom - Uniline.html', 'Xpool - Uniline.html','Cuantiko- Uniline.html' ])">
+            <img src="IMAGENES/LINEAS DE PAÑO/Decorative.png" alt="Image 8"
+                class="overlay-image overlay-image-8 clickable olive"
+                onclick="openModal('IMAGENES/VIDEOS/decorativo_1.mp4', ['IMAGENES/BRANDING/Decorative/PRINT BILLIARD.jpg', 'IMAGENES/BRANDING/Decorative/QUINCE BOLAS.jpg', 'IMAGENES/BRANDING/Decorative/UPHOLSTERY.jpg'], ['Print billiard - Uniline.html', 'Quince bolas - Uniline.html', 'Upholstery - Uniline.html' ])">
+            <img src="IMAGENES/LINEAS DE PAÑO/conectividad.png" alt="Image 9"
+                class="overlay-image overlay-image-9 clickable purple" id="openModal">
+            <img src="IMAGENES/LINEAS DE PAÑO/newtech.png" alt="Image 10"
+                class="overlay-image overlay-image-10 clickable purple" id="openModal2">
+        </div>
+
+        <div class="modal_nt" id="videoModal">
+            <button class="close-btn" id="closeModal">X</button>
+            <div class="w3-content w3-display-container" style="max-width:800px">
+                <div class="video-container w3-animate-right">
+                    <video controls>
+                        <source src="IMAGENES/VIDEOS/NUEVAS TECNOLOGIAS TRAZABILIDAD.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="video-container w3-animate-right" style="display:none">
+                    <video controls>
+                        <source src="IMAGENES/VIDEOS/QR.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+                <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+
+                <div class="thumbnail-container">
+                    <img class="thumbnail" src="IMAGENES/BRANDING/Conectividad/Traceability.jpg" onclick="currentDiv(1)"
+                        alt="Video 1">
+                    <img class="thumbnail" src="IMAGENES/BRANDING/Conectividad/Qr code.jpg" onclick="currentDiv(2)"
+                        alt="Video 2">
+                </div>
+            </div>
+        </div>
+
+        <div class="modal_nt" id="videoModal2">
+            <button class="close-btn" id="closeModal2">X</button>
+            <div class="w3-content w3-display-container" style="max-width:800px">
+                <div class="video-container2 w3-animate-right">
+                    <video controls>
+                        <source src="IMAGENES/VIDEOS/Nuevas tecnologias/CERO ESTATICA.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="video-container2 w3-animate-right" style="display:none">
+                    <video controls>
+                        <source src="IMAGENES/VIDEOS/Nuevas tecnologias/DRY.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="video-container2 w3-animate-right" style="display:none">
+                    <video controls>
+                        <source src="IMAGENES/VIDEOS/Nuevas tecnologias/EMBOSSING.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="video-container2 w3-animate-right" style="display:none">
+                    <video controls>
+                        <source src="IMAGENES/VIDEOS/Nuevas tecnologias/Full jaquard.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="video-container2 w3-animate-right" style="display:none">
+                    <video controls>
+                        <source src="IMAGENES/VIDEOS/Nuevas tecnologias/IGNIFUGO.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="video-container2 w3-animate-right" style="display:none">
+                    <video controls>
+                        <source src="IMAGENES/VIDEOS/Nuevas tecnologias/TÊXTEIS SUSTENTÁVEIS.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="video-container2 w3-animate-right" style="display:none">
+                    <video controls>
+                        <source src="IMAGENES/VIDEOS/Nuevas tecnologias/VORTERIZADO CABLEADO.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <button class="w3-button w3-black w3-display-left" onclick="plusDivs2(-1)">&#10094;</button>
+                <button class="w3-button w3-black w3-display-right" onclick="plusDivs2(1)">&#10095;</button>
+
+                <div class="thumbnail-container">
+                    <img class="thumbnail" src="IMAGENES/BRANDING/Nuevas tecnologias/Zero static.jpg" onclick="currentDiv2(1)"
+                        alt="Video 1">
+                    <img class="thumbnail" src="IMAGENES/BRANDING/Nuevas tecnologias/Dry.jpg" onclick="currentDiv2(2)" 
+                        alt="Video 2">
+                    <img class="thumbnail" src="IMAGENES/BRANDING/Nuevas tecnologias/Embossing.jpg" onclick="currentDiv2(3)"
+                        alt="Video 3">
+                    <img class="thumbnail" src="IMAGENES/BRANDING/Nuevas tecnologias/Full jacquard.jpg" onclick="currentDiv2(4)"
+                        alt="Video 4">
+                </div>
+                <div class="thumbnail-container">
+                    <img class="thumbnail" src="IMAGENES/BRANDING/Nuevas tecnologias/Fireproof.jpg" onclick="currentDiv2(5)"
+                        alt="Video 5">
+                    <img class="thumbnail" src="IMAGENES/BRANDING/Nuevas tecnologias/Sustainable textiles.jpg" onclick="currentDiv2(6)"
+                        alt="Video 6">
+                    <img class="thumbnail" src="IMAGENES/BRANDING/Nuevas tecnologias/Vortex.jpg" onclick="currentDiv2(7)" 
+                        alt="Video 7">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección 3 -->
+    <section class="section three">
+        <div class="columns">
+            <div class="column">
+                <img src="IMAGENES/LOGOS/NUMERO MARCAS.png" class="clickable" style="width: 60%;"
+                    onclick="openModal('IMAGENES/VIDEOS/decorativo_1.mp4', ['IMAGENES/BRANDING/Decorative/PRINT BILLIARD.PNG', 'IMAGENES/BRANDING/Decorative/QUINCE BOLAS.PNG', 'IMAGENES/BRANDING/Decorative/UPHOLSTERY.PNG'], ['Print billiard - Uniline.html', 'Quince bolas - Uniline.html', 'Upholstery - Uniline.html' ])">
+            </div>
+            <div class="column">
+                <div class="content">
+                    <p class="large">COMPROMETIDO<br>
+                        COM O PLANETA</p>
+                    <p class="small">
+                        Na Uniline estamos conscientes do impacto que a indústria <br>
+                        têxtil pode ter no planeta. É por isso que nas nossas <br>
+                        NOVAS TECNOLOGIAS também é muito importante pensar na <br>
+                        sustentabilidade e sustentabilidade dos nossos produtos <br>
+                        para contribuir para a redução dos danos ambientais.
+                    </p>
+                    &nbsp
+                    <p>
+                        <a href="#" class="styled-button" id="open2Modal2">NOVAS TECNOLOGIAS</a>
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Sección 4 -->
+    <section class="section four">
+        <div class="image-container">
+            <img src="IMAGENES/1.jpg" alt="Imagen 1">
+            <img src="IMAGENES/2.png" alt="Imagen 2">
+            <img src="IMAGENES/3.jpg" alt="Imagen 3">
+            <img src="IMAGENES/4.jpg" alt="Imagen 4">
+        </div>
+    </section>
+    <!-- Modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div class="modal-body">
+                <video id="modalVideo" controls></video>
+                <div class="additional-images" id="additionalImages"></div>
+            </div>
+        </div>
+    </div>
+    <!-- Social Buttons -->
+    <div class="social-buttons-container">
+        <div class="social-button whatsapp"><a
+                href="https://api.whatsapp.com/send/?phone=573202816007&text=Hola&type=phone_number&app_absent=0"><i
+                    class="fa fa-whatsapp"></i></a></div>
+        <div class="social-button instagram"><a href="https://www.instagram.com/unilinebilliard/"><i
+                    class="fa fa-instagram"></i></a></div>
+        <div class="social-button facebook"><a href="https://www.facebook.com/unilinebilliard"><i
+                    class="fa fa-facebook"></i></a></div>
+        <div class="social-button tiktok">
+            <a href="https://www.tiktok.com/@uniline.tv" target="_blank">
+                <img src="IMAGENES/LOGOS/Tiktok.png" alt="TikTok Logo" style="width: 50px; height: 28px;">
+            </a>
+        </div>
+    </div>
+    <!--Footer-->
+    <footer class="footer-distributed">
+
+        <div class="footer-left">
+
+            <h3><img src="IMAGENES/LOGOS/Logo_UNILINE_Blanco2.png" alt="Image 9" width="50%"></h3>
+            <p class="footer-links">
+                <a href="https://www.uniline.com.co/garantia-efectiva/">Garantia Efetiva</a>
+                <a href="Termos.bilhar.html">Termos e Condições</a>
+            <p class="footer-company-name">Dislana© 2024</p>
+        </div>
+        <div class="footer-center">
+            <div>
+                <i class="fa fa-map-marker"></i>
+                <p><span>Cl. 9 #41 a 16</span> Bogotá, Colombia</p>
+            </div>
+            <div>
+                <i class="fa fa-phone"></i>
+                <p>+57 312 4578522</p>
+            </div>
+
+            <div>
+                <i class="fa fa-envelope"></i>
+                <p><a href="mailto:ventas@dislana.com">ventas@dislana.com</a></p>
+            </div>
+
+        </div>
+
+        <div class="footer-right">
+            <p class="footer-company-about">
+                <span>SOBRE UNILINE</span>
+                A UNILINE apoia as melhores marcas de panos de bilhar a nível Profissional, Desportivo-Recreativo e
+                Decorativo, proporcionando a melhor qualidade e precisão.
+            </p>
+        </div>
+    </footer>
+    <script>
+        function changeColor(elementId) {
+            document.getElementById(elementId).style.color = "blue";
+        }
+        function restoreColor(elementId) {
+            document.getElementById(elementId).style.color = "white";
+        }
+        function toggleNavbar() {
+            var x = document.getElementById("navDemo");
+            if (x.className.indexOf("w3-show") === -1) {
+                x.className += " w3-show";
+            } else {
+                x.className = x.className.replace(" w3-show", "");
+            }
+        }
+
+        function openModal(videoSrc, imageSources, imageLinks) {
+            var modal = document.getElementById("myModal");
+            var video = document.getElementById("modalVideo");
+            var additionalImagesContainer = document.getElementById("additionalImages");
+
+            video.src = videoSrc;
+
+            // Limpiar imágenes adicionales anteriores
+            additionalImagesContainer.innerHTML = '';
+
+            video.style.marginRight = '50px';
+
+            var imgSize;
+            if (window.innerWidth <= 480) {
+                imgSize = '180px'; // Tamaño para pantallas muy pequeñas
+            } else if (window.innerWidth <= 768) {
+                imgSize = '180px'; // Tamaño para pantallas móviles
+            } else {
+                imgSize = '380px'; // Tamaño por defecto
+            }
+
+
+            // Añadir imágenes adicionales con enlaces
+            for (var i = 0; i < imageSources.length; i++) {
+                var link = document.createElement('a');
+                link.href = imageLinks[i];
+                link.target = '_blank';
+                var img = document.createElement('img');
+                img.src = imageSources[i];
+
+                img.classList.add('fixed-size-image');
+                img.style.width = imgSize;
+
+                link.appendChild(img);
+                additionalImagesContainer.appendChild(link);
+            }
+            modal.style.display = "block";
+        }
+        function closeModal() {
+            var modal = document.getElementById("myModal");
+            var video = document.getElementById("modalVideo");
+
+            modal.style.display = "none";
+            video.pause();
+            video.src = '';
+        }
+        window.onclick = function (event) {
+            var modal = document.getElementById("myModal");
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+    </script>
+    <script>
+        const radioButtons = document.querySelectorAll('input[name="option"]');
+        const selectedElement = document.querySelector('.selected');
+
+        radioButtons.forEach(radio => {
+            radio.addEventListener('change', (event) => {
+                const selectedOption = event.target.id;
+                const selectedText = document.querySelector(`label[for="${selectedOption}"]`).dataset.txt; 
+
+                console.log(`Idioma seleccionado: ${selectedText}`);
+                if (selectedText === "Español") {
+                    window.location.href = "../es-ES/index.html";
+                }
+            });
+        });
+    </script>
+    <script>
+        const modal = document.getElementById('videoModal');
+        const openModalBtn = document.getElementById('openModal');
+        const modal2 = document.getElementById('videoModal2');
+        const openModalBtn2 = document.getElementById('openModal2');
+        const openModal2Btn2 = document.getElementById('open2Modal2');
+        const closeModalBtn = document.getElementById('closeModal');
+        const closeModal2Btn = document.getElementById('closeModal2');
+        const carousel = document.getElementById('carousel');
+        const prevBtn = document.getElementById('prev');
+        const nextBtn = document.getElementById('next');
+
+        let currentIndex = 0;
+
+        openModalBtn.addEventListener('click', () => {
+            modal.classList.add('active');
+        });
+
+        openModalBtn2.addEventListener('click', () => {
+            modal2.classList.add('active');
+        });
+        openModal2Btn2.addEventListener('click', () => {
+            modal2.classList.add('active');
+        });
+
+        closeModalBtn.addEventListener('click', () => {
+            modal.classList.remove('active');
+            modal2.classList.remove('active');
+        });
+
+        closeModal2Btn.addEventListener('click', () => {
+            modal2.classList.remove('active');
+        });
+
+        let slideIndex = 1;
+        const showDivs = (n) => {
+            const slides = document.getElementsByClassName('video-container');
+            if (n > slides.length) { slideIndex = 1; }
+            if (n < 1) { slideIndex = slides.length; }
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = 'none';
+            }
+            slides[slideIndex - 1].style.display = 'block';
+        };
+
+        const showDivs2 = (n) => {
+            const slides = document.getElementsByClassName('video-container2');
+            if (n > slides.length) { slideIndex = 1; }
+            if (n < 1) { slideIndex = slides.length; }
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = 'none';
+            }
+            slides[slideIndex - 1].style.display = 'block';
+        };
+
+        const plusDivs = (n) => {
+            showDivs(slideIndex += n);
+        };
+
+
+        const plusDivs2 = (n) => {
+            showDivs2(slideIndex += n);
+        };
+
+        const currentDiv = (n) => {
+            showDivs(slideIndex = n);
+        };
+
+        const currentDiv2 = (n) => {
+            showDivs2(slideIndex = n);
+        };
+
+        showDivs(slideIndex);
+        showDivs2(slideIndex);
+    </script>
+</body>
+
+</html>
