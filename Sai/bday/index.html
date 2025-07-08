@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flower Garden Portal</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #2d5016 0%, #3e7b27 50%, #4a7c59 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Animated Flowers Background */
+        .flower {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            opacity: 0.7;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .flower::before {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: #7cb342;
+            border-radius: 50%;
+            top: 0;
+            left: 10px;
+            box-shadow: 
+                -10px 10px 0 #8bc34a,
+                10px 10px 0 #689f38,
+                0 20px 0 #558b2f,
+                -10px 30px 0 #33691e,
+                10px 30px 0 #1b5e20;
+        }
+
+        .flower::after {
+            content: '';
+            position: absolute;
+            width: 8px;
+            height: 25px;
+            background: #2e7d32;
+            bottom: -15px;
+            left: 16px;
+            border-radius: 4px;
+        }
+
+        .flower:nth-child(1) { left: 10%; animation-delay: 0s; }
+        .flower:nth-child(2) { left: 20%; animation-delay: 1s; }
+        .flower:nth-child(3) { left: 30%; animation-delay: 2s; }
+        .flower:nth-child(4) { left: 40%; animation-delay: 3s; }
+        .flower:nth-child(5) { left: 50%; animation-delay: 4s; }
+        .flower:nth-child(6) { left: 60%; animation-delay: 5s; }
+        .flower:nth-child(7) { left: 70%; animation-delay: 0.5s; }
+        .flower:nth-child(8) { left: 80%; animation-delay: 1.5s; }
+        .flower:nth-child(9) { left: 90%; animation-delay: 2.5s; }
+
+        @keyframes float {
+            0%, 100% { 
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10%, 90% {
+                opacity: 0.7;
+            }
+            50% { 
+                transform: translateY(-20px) rotate(180deg);
+                opacity: 1;
+            }
+        }
+
+        /* Main Container */
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .title {
+            color: white;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from { text-shadow: 2px 2px 4px rgba(0,0,0,0.3), 0 0 10px rgba(139, 195, 74, 0.3); }
+            to { text-shadow: 2px 2px 4px rgba(0,0,0,0.3), 0 0 20px rgba(139, 195, 74, 0.6); }
+        }
+
+        .form-container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            border: 1px solid rgba(139, 195, 74, 0.3);
+        }
+
+        .input-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            gap: 1rem;
+        }
+
+        .input-field {
+            padding: 12px 16px;
+            border: none;
+            border-radius: 25px;
+            background: rgba(255, 255, 255, 0.9);
+            font-size: 1rem;
+            width: 250px;
+            outline: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .input-field:focus {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+            background: rgba(255, 255, 255, 1);
+        }
+
+        .check-btn {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 25px;
+            background: linear-gradient(45deg, #4caf50, #66bb6a);
+            color: white;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            font-weight: bold;
+        }
+
+        .check-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+            background: linear-gradient(45deg, #66bb6a, #4caf50);
+        }
+
+        .check-btn:active {
+            transform: translateY(0);
+        }
+
+        .label {
+            color: white;
+            font-weight: bold;
+            min-width: 80px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .input-group {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .input-field {
+                width: 100%;
+                margin-bottom: 0.5rem;
+            }
+            
+            .title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Animated Flowers -->
+    <div class="flower"></div>
+    <div class="flower"></div>
+    <div class="flower"></div>
+    <div class="flower"></div>
+    <div class="flower"></div>
+    <div class="flower"></div>
+    <div class="flower"></div>
+    <div class="flower"></div>
+    <div class="flower"></div>
+
+    <div class="container">
+        <h1 class="title">🌸 Sarai's Birthday Portal 🌸</h1>
+        
+        <div class="form-container">
+            <div class="input-group">
+                <span class="label">Field 1:</span>
+                <input type="text" class="input-field" id="input1" placeholder="Susurra el secreto...">
+                <button class="check-btn" onclick="checkInput(1)">🌺 Check</button>
+            </div>
+            
+            <div class="input-group">
+                <span class="label">Field 2:</span>
+                <input type="text" class="input-field" id="input2" placeholder="Susurra el secreto...">
+                <button class="check-btn" onclick="checkInput(2)">🌻 Check</button>
+            </div>
+            
+            <div class="input-group">
+                <span class="label">Field 3:</span>
+                <input type="text" class="input-field" id="input3" placeholder="Susurra el secreto...">
+                <button class="check-btn" onclick="checkInput(3)">🌷 Check</button>
+            </div>
+            
+            <div class="input-group">
+                <span class="label">Field 4:</span>
+                <input type="text" class="input-field" id="input4" placeholder="Susurra el secreto...">
+                <button class="check-btn" onclick="checkInput(4)">🌹 Check</button>
+            </div>
+            
+            <div class="input-group">
+                <span class="label">Field 5:</span>
+                <input type="text" class="input-field" id="input5" placeholder="Susurra el secreto...">
+                <button class="check-btn" onclick="checkInput(5)">🌼 Check</button>
+            </div>
+            
+            <div class="input-group">
+                <span class="label">Field 6:</span>
+                <input type="text" class="input-field" id="input6" placeholder="Susurra el secreto...">
+                <button class="check-btn" onclick="checkInput(6)">🌸 Check</button>
+            </div>
+            
+            <div class="input-group">
+                <span class="label">Field 7:</span>
+                <input type="text" class="input-field" id="input7" placeholder="Susurra el secreto...">
+                <button class="check-btn" onclick="checkInput(7)">🌺 Check</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Configuration object with secret words and their corresponding URLs
+        const secretConfig = {
+            1: { word: "Cr8fr*2eyaDrep7ltUba", url: "https://drive.google.com/drive/folders/1qC0oT50nlI-9Am1fJrkgxh8igT3jnF65?usp=drive_link" },
+            2: { word: "PR1#rAWRokejusLX4chA", url: "https://drive.google.com/drive/folders/12QLTF2j_ezV3q4lNUrE53Br88Z0tKKLM?usp=drive_link" },
+            3: { word: "4RU4ewE2Ax9Zld&WO!u4", url: "https://drive.google.com/drive/folders/12l999U1jXKFyF89hBDKbsVhWmJDXoUlW?usp=drive_link" },
+            4: { word: "RuF#1&Lc#f_LFReziTuJ", url: "https://drive.google.com/drive/folders/1onuXoAMcv8zjltwTb8exzpkFWI3WmGsH?usp=drive_link" },
+            5: { word: "T3lniJ*Ch2Qiyag8niRi", url: "https://drive.google.com/drive/folders/1eXY24wmn31R_ORK7DioIAKJlLGDtHFKf?usp=drive_link" },
+            6: { word: "wrO@#q2CriWAp0ecRewL", url: "https://drive.google.com/drive/folders/1T-bNNCbbpPT9fKY57nfvMWoAtYR9gntc?usp=drive_link" },
+            7: { word: "muSPltRafacR195Rus1?", url: "https://drive.google.com/drive/folders/192koeEI92c7wKqlpLt8tz9PxullS5fgr?usp=drive_link" }
+        };
+
+        function checkInput(fieldNumber) {
+            const input = document.getElementById(`input${fieldNumber}`);
+            const userInput = input.value.trim();
+            const config = secretConfig[fieldNumber];
+            
+            if (userInput === config.word) {
+                // Success animation
+                input.style.background = 'linear-gradient(45deg, #2e7d32, #388e3c)';
+                input.style.color = 'white';
+                
+                // Show success message
+                const originalPlaceholder = input.placeholder;
+                input.placeholder = '✓ Correct! Redirecting...';
+                
+                // Redirect after a short delay
+                setTimeout(() => {
+                    window.open(config.url, '_blank');
+                    
+                    // Reset the field after redirect
+                    setTimeout(() => {
+                        input.value = '';
+                        input.style.background = 'rgba(255, 255, 255, 0.9)';
+                        input.style.color = 'black';
+                        input.placeholder = originalPlaceholder;
+                    }, 1000);
+                }, 1500);
+                
+            } else {
+                // Error animation
+                input.style.background = 'linear-gradient(45deg, #d32f2f, #f44336)';
+                input.style.color = 'white';
+                
+                // Show error message
+                const originalPlaceholder = input.placeholder;
+                input.placeholder = '✗ Try again...';
+                
+                // Shake animation
+                input.style.animation = 'shake 0.5s ease-in-out';
+                
+                // Reset after animation
+                setTimeout(() => {
+                    input.style.background = 'rgba(255, 255, 255, 0.9)';
+                    input.style.color = 'black';
+                    input.placeholder = originalPlaceholder;
+                    input.style.animation = '';
+                }, 2000);
+            }
+        }
+
+        // Add shake animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes shake {
+                0%, 100% { transform: translateX(0); }
+                25% { transform: translateX(-5px); }
+                75% { transform: translateX(5px); }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Add Enter key support
+        document.addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                const activeElement = document.activeElement;
+                if (activeElement.classList.contains('input-field')) {
+                    const fieldNumber = activeElement.id.replace('input', '');
+                    checkInput(parseInt(fieldNumber));
+                }
+            }
+        });
+
+        // Console hint for users
+        console.log('🌸 Secret words hint:');
+        console.log('Field 1: rose');
+        console.log('Field 2: tulip');
+        console.log('Field 3: daisy');
+        console.log('Field 4: lily');
+        console.log('Field 5: orchid');
+        console.log('Field 6: sunflower');
+        console.log('Field 7: jasmine');
+    </script>
+</body>
+</html>
